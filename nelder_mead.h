@@ -1,0 +1,3 @@
+class NelderMead : public OptimizationMethod {
+    
+}
