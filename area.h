@@ -1,6 +1,6 @@
-//#include <iostream>
-//#include <cstdlib>
-//#include <armadillo>
+#include <iostream>
+#include <cstdlib>
+#include <armadillo>
 
 class Point {
 
