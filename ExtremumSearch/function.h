@@ -2,14 +2,19 @@
 
 #include <armadillo>
 
+#include "custom_defines.h"
+#include "area.h"
+
 class Function {
 private:
-    int dim;
+	Area * domain;
 public:
-    Function(int _dim) : dim(_dim) {}
-    virtual ~Function();
-    virtual double eval() const = 0;
+    Function(Area * _domain) : domain(_domain) {}
+	virtual ~Function() { domain = 0; }
+    virtual double eval(const vPoint& X) const = 0;
     int GetDim() const {
-        return dim;
+        return domain->GetDim();
     }
+	friend double CalcGrad(Function * F, const vPoint& X, double delta);
+	friend double CalcHessian(Function * F, const vPoint& X, double delta);
 };
