@@ -24,6 +24,7 @@
     <ClCompile Include="ncube.cpp" />
     <ClCompile Include="nelder_mead.cpp" />
     <ClCompile Include="random_search.cpp" />
+    <ClCompile Include="Simplex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="area.h" />
@@ -32,8 +33,10 @@
     <ClInclude Include="ncube.h" />
     <ClInclude Include="nelder_mead.h" />
     <ClInclude Include="optimization_method.h" />
+    <ClInclude Include="random_seed.h" />
     <ClInclude Include="random_search.h" />
     <ClInclude Include="range.h" />
+    <ClInclude Include="Simplex.h" />
     <ClInclude Include="smooth_function.h" />
     <ClInclude Include="terminal_condition.h" />
   </ItemGroup>

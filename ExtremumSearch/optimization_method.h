@@ -12,6 +12,6 @@ private:
 public:
 	OptimizationMethod() {}
 	virtual ~OptimizationMethod() {}
-	virtual vPointSeq Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint& FirstPoint) = 0;
+	virtual vPointSeq& Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint& FirstPoint) = 0;
     virtual char* Name() const = 0;
 };
