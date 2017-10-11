@@ -19,19 +19,36 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="condition_iter.cpp" />
+    <ClCompile Include="condition_f_difference.cpp" />
+    <ClCompile Include="condition_grad.cpp" />
+    <ClCompile Include="condition_improvement.cpp" />
+    <ClCompile Include="condition_x_difference.cpp" />
+    <ClCompile Include="count_condition.cpp" />
+    <ClCompile Include="eps_condition.cpp" />
     <ClCompile Include="function.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ncube.cpp" />
     <ClCompile Include="nelder_mead.cpp" />
+    <ClCompile Include="norm.cpp" />
     <ClCompile Include="random_search.cpp" />
+    <ClCompile Include="range.cpp" />
     <ClCompile Include="Simplex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="area.h" />
+    <ClInclude Include="condition_iter.h" />
+    <ClInclude Include="condition_f_difference.h" />
+    <ClInclude Include="condition_grad.h" />
+    <ClInclude Include="condition_improvement.h" />
+    <ClInclude Include="condition_x_difference.h" />
+    <ClInclude Include="count_condition.h" />
     <ClInclude Include="custom_defines.h" />
+    <ClInclude Include="eps_condition.h" />
     <ClInclude Include="function.h" />
     <ClInclude Include="ncube.h" />
     <ClInclude Include="nelder_mead.h" />
+    <ClInclude Include="norm.h" />
     <ClInclude Include="optimization_method.h" />
     <ClInclude Include="random_seed.h" />
     <ClInclude Include="random_search.h" />

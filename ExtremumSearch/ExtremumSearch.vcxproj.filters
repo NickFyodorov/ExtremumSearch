@@ -33,6 +33,33 @@
     <ClCompile Include="Simplex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="condition_x_difference.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="norm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="condition_f_difference.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eps_condition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="condition_grad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="condition_improvement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="count_condition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="condition_iter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="range.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="area.h">
@@ -69,6 +96,30 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Simplex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="condition_improvement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="condition_grad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="condition_x_difference.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="condition_f_difference.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="norm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="eps_condition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="count_condition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="condition_iter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

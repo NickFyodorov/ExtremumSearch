@@ -15,6 +15,6 @@ public:
     int GetDim() const {
         return domain->GetDim();
     }
-	friend double CalcGrad(Function * F, const vPoint& X, double delta);
-	friend double CalcHessian(Function * F, const vPoint& X, double delta);
+	friend double CalcGrad(const Function * F, const vPoint& X, double delta);
+	friend double CalcHessian(const Function * F, const vPoint& X, double delta);
 };

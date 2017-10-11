@@ -1,6 +1,6 @@
 #include "Simplex.h"
 
-Simplex::Simplex(int _dim) : Area(_dim)
+Simplex::Simplex(int _dim) : dim(_dim)
 {
 	vPoint X(dim, arma::fill::zeros);
 	vertices.push_back(X);
@@ -11,8 +11,13 @@ Simplex::Simplex(int _dim) : Area(_dim)
 	}
 }
 
-Simplex::Simplex(const vPointSeq & _vertices) : Area(_vertices[0].n_elem)
+Simplex::Simplex(const vPointSeq & _vertices) : dim(_vertices[0].n_elem)
 {
+
+	if (vertices.size() != (dim + 1)) {
+		//exception
+	}
+
 	for (int i = 0; i < _vertices.size(); ++i) {
 		if (_vertices[i].n_elem != dim) {
 			//exception
@@ -36,7 +41,7 @@ void Simplex::MoveTo(const vPoint & X)
 	for (int i = 0; i < vertices.size(); ++i) vertices[i] += Offset;
 }
 
-void Simplex::Squeeze(Area * A)
+void Simplex::Squeeze(const Area * A)
 {
 	vPoint Centroid(vertices[0]);
 

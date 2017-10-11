@@ -17,6 +17,8 @@ public:
 	NCube(int _dim = 2);
 	virtual ~NCube() {}
 	virtual bool In(const vPoint& X) const;
+	virtual vPoint& RandomPoint() const;
+	virtual Area* SubArea(const vPoint& X, double epsilon) const;
 	const Range& operator[](int index) const { return ranges[index]; }
 	Range& operator[](int index) { return ranges[index]; }
 };

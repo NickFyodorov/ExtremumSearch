@@ -1,6 +1,7 @@
 #pragma once
 
 #include "optimization_method.h"
+#include "Simplex.h"
 
 class NelderMead : public OptimizationMethod {
 private:
@@ -8,19 +9,17 @@ private:
     double expansion;
     double contraction;
     double shrink;
-    vPointSeq simplex;
 public:
-    NelderMead(double _reflection, double _expansion, double _contraction, double _shrink, const vPointSeq& _simplex) : OptimizationMethod() {}
+	NelderMead(double _reflection = 1.0, double _expansion = 2.0, double _contraction = 0.5, double _shrink = 0.5);
 	virtual ~NelderMead() {}
     virtual vPointSeq& Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint& FirstPoint);
 	virtual char* Name() const { return "Nelder-Mead"; }
-	bool SetSimplex(const vPointSeq& _simplex) { simplex = _simplex; }
-	bool SetReflection(double _reflection) { reflection = _reflection; }
-	bool SetExpansion(double _expansion) { expansion = _expansion; }
-	bool SetContraction(double _contraction) { contraction = _contraction; }
-	bool SetShrink(double _shrink) { shrink = _shrink; }
-	double GetReflection() { return reflection; }
-	double GetExpansion() { return expansion; }
-	double GetContraction() { return contraction; }
-	double GetShrink() { return shrink; }
+	bool SetReflection(double _reflection);
+	bool SetExpansion(double _expansion);
+	bool SetContraction(double _contraction);
+	bool SetShrink(double _shrink);
+	double GetReflection() const { return reflection; }
+	double GetExpansion() const { return expansion; }
+	double GetContraction() const { return contraction; }
+	double GetShrink() const { return shrink; }
 };

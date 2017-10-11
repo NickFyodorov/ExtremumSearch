@@ -3,17 +3,40 @@
 
 #include "nelder_mead.h"
 
+NelderMead::NelderMead(double _reflection, double _expansion, double _contraction, double _shrink) : OptimizationMethod()
+{
+	if (!SetReflection(_reflection)) {
+		//exception
+	}
+
+	if (!SetContraction(_contraction)) {
+		//exception
+	}
+
+	if (!SetExpansion(_expansion)) {
+		//exception
+	}
+
+	if (!SetShrink(_shrink)) {
+		//exception
+	}
+}
+
 vPointSeq& NelderMead::Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint & FirstPoint)
 {
 	if (A->GetDim() != F->GetDim()) {
 		//exception
 	}
 
-	if (A->GetDim() != simplex.size() - 1) {
+	Simplex simplex(A->GetDim());
+	simplex.MoveTo(FirstPoint);
+	simplex.Squeeze(A);
+
+	if (A->GetDim() != simplex.Size() - 1) {
 		//exception
 	}
 
-	for (int i = 0; i < simplex.size(); ++i) {
+	for (int i = 0; i < simplex.Size(); ++i) {
 		if (!A->In(simplex[i])) {
 			//exception
 		}
@@ -28,7 +51,7 @@ vPointSeq& NelderMead::Optimize(const Area * A, const Function * F, const Termin
 
 	do {
 		//step 1 - Order
-		std::sort(simplex.begin(), simplex.end(),
+		std::sort(simplex[0], simplex[n],
 			[&](const vPoint& X1, const vPoint& X2) {
 			return F->eval(X1) < F->eval(X2);
 		}
@@ -68,4 +91,40 @@ vPointSeq& NelderMead::Optimize(const Area * A, const Function * F, const Termin
 	} while (!T->Stop(F, Approximation));
 
 	return Approximation;
+}
+
+bool NelderMead::SetReflection(double _reflection)
+{
+	if (_reflection > 0) { 
+		reflection = _reflection; 
+		return true;
+	}
+	return false;
+}
+
+bool NelderMead::SetExpansion(double _expansion)
+{
+	if (_expansion > 1) {
+		expansion = _expansion;
+		return true;
+	}
+	return false;
+}
+
+bool NelderMead::SetContraction(double _contraction)
+{
+	if (0 < _contraction && _contraction <= 0.5) {
+		contraction = _contraction;
+		return true;
+	}
+	return false;
+}
+
+bool NelderMead::SetShrink(double _shrink)
+{
+	if (0 < _shrink && _shrink < 1) {
+		shrink = _shrink;
+		return true;
+	}
+	return false;
 }
