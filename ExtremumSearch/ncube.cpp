@@ -16,10 +16,31 @@ bool NCube::In(const vPoint & X) const
 
 vPoint & NCube::RandomPoint() const
 {
-	// TODO: insert return statement here
+	vPoint X(GetDim());
+
+	for (int i = 0; i < GetDim(); ++i) {
+		X[i] = (ranges[i]).RandomPoint()[0];
+	}
+	return X;
 }
 
 Area * NCube::SubArea(const vPoint & X, double epsilon) const
 {
-	return nullptr;
+	if (!In(X)) {
+		//expection
+	}
+
+	vPoint T(1);
+
+	NCube ncube(GetDim());
+	Area * pR;
+
+	for (int i = 0; i < GetDim(); ++i) {
+		T[0] = X[i];
+		pR = ranges[i].SubArea(T, epsilon);
+		ncube[i] = *(dynamic_cast<Range*>(pR));
+		delete pR;
+	}
+
+	return &ncube;
 }

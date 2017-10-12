@@ -1,5 +1,7 @@
 #pragma once
 
+#include <random>
+
 #include "custom_defines.h"
 #include "area.h"
 
