@@ -1,1 +1,8 @@
-﻿LINK : fatal error LNK1168: cannot open C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.exe for writing
+﻿  random_search.cpp
+  nelder_mead.cpp
+  Generating Code...
+  Compiling...
+  main.cpp
+  Generating Code...
+  ExtremumSearch.vcxproj -> C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.exe
+  ExtremumSearch.vcxproj -> C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.pdb (Full PDB)

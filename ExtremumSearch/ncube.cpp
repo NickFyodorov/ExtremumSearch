@@ -30,20 +30,18 @@ vPoint & NCube::RandomPoint() const
 Area * NCube::SubArea(const vPoint & X, double epsilon) const
 {
 	if (!In(X)) {
-		//expection
+		//exception
 	}
 
 	vPoint T(1);
 
-	NCube ncube(GetDim());
-	Area * pR;
+	Area * pR = new NCube(GetDim());
 
 	for (int i = 0; i < GetDim(); ++i) {
 		T[0] = X[i];
-		pR = ranges[i].SubArea(T, epsilon);
-		ncube[i] = *((Range*)pR);
+		(*((NCube*)pR))[i] = *((Range*)(ranges[i].SubArea(T, epsilon)));
 		delete pR;
 	}
 
-	return &ncube;
+	return pR;
 }

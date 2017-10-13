@@ -31,30 +31,15 @@ Simplex::Simplex(const std::vector<vPoint> & _vertices) : dim(_vertices[0].GetDi
 
 void Simplex::MoveTo(const vPoint & X)
 {
-	vPoint Centroid(vertices[0]);
-
-	for (int i = 1; i < vertices.size(); ++i) Centroid += vertices[i];
-	Centroid /= vertices.size();
-
 	vPoint Offset(X);
-	Offset -= Centroid;
-
+	Offset -= vertices[0];
 	for (int i = 0; i < vertices.size(); ++i) vertices[i] += Offset;
 }
 
 void Simplex::Squeeze(const Area * A)
 {
-	vPoint Centroid(vertices[0]);
-
-	for (int i = 1; i < vertices.size(); ++i) Centroid += vertices[i];
-	Centroid /= vertices.size();
-
 	double squeeze = 1;
-
-	if (!A->In(Centroid)) {
-		//exception
-	}
-
+	vPoint tmp;
 	bool all_in;
 	do {
 		all_in = true;
@@ -66,13 +51,16 @@ void Simplex::Squeeze(const Area * A)
 		}
 		if (!all_in) {
 			squeeze *= 0.5;
-			for (int i = 0; i < vertices.size(); ++i) {
-				vertices[i] -= Centroid;
+			for (int i = 1; i < vertices.size(); ++i) {
+				vertices[i] -= vertices[0];
 				vertices[i] *= squeeze;
-				vertices[i] += Centroid;
+				vertices[i] += vertices[0];
 			}
 		}
 	} while (!all_in);
 }
 
-
+void Simplex::Sort(const Function * F)
+{
+	std::sort(vertices.begin(), vertices.end(), [&](const vPoint& X1, const vPoint& X2) {return F->eval(X1) < F->eval(X2); });
+}

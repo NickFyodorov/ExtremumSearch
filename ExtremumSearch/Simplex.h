@@ -1,7 +1,10 @@
 #pragma once
 
-#include "area.h"
+#include <algorithm>
+#include <functional>
 
+#include "area.h"
+#include "function.h"
 #include "vpoint.h"
 
 class Simplex {
@@ -17,4 +20,5 @@ public:
 	const vPoint& operator[](int index) const { return vertices[index]; }
 	vPoint& operator[](int index) { return vertices[index]; }
 	int Size() const { return vertices.size(); }
+	void Sort(const Function * F);
 };

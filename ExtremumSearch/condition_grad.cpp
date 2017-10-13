@@ -6,7 +6,7 @@ bool ConditionGrad::Stop(const Function * F, const std::vector<vPoint> & Approx)
 	//dynamic cast if F is smooth then calc smooth grad
 
 	double delta = GetEps() * 1e-3;
-	if (CalcGrad(F, *Approx.end(), delta) < GetEps()) {
+	if (CalcGrad(F, Approx.back(), delta) < GetEps()) {
 		return true;
 	}
 	return false;

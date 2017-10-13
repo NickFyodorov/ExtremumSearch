@@ -16,7 +16,7 @@ bool RandomSearch::SetGamma(double _gamma)
 	return true;
 }
 
-std::vector<vPoint>& RandomSearch::Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint & FirstPoint)
+std::vector<vPoint> RandomSearch::Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint & FirstPoint)
 {
 	std::vector<vPoint> Approximation;
 	Approximation.push_back(FirstPoint);
@@ -30,10 +30,13 @@ std::vector<vPoint>& RandomSearch::Optimize(const Area * A, const Function * F, 
 	do {
 		if (ber(rng)) {
 			Current = A->RandomPoint();
+			std::cout << Current << std::endl;
 		}
 		else {
 			pSubArea = A->SubArea(*Approximation.end(), subarea_size);
-			Current = pSubArea->RandomPoint();
+			do {
+				Current = pSubArea->RandomPoint();
+			} while (!A->In(Current));
 			subarea_size *= gamma;
 		}
 		Approximation.push_back(Current);

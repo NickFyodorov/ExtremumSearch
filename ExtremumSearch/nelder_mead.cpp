@@ -1,5 +1,7 @@
 
 #include <algorithm>
+#include <functional>
+#include <iostream>
 
 #include "nelder_mead.h"
 
@@ -22,7 +24,7 @@ NelderMead::NelderMead(double _reflection, double _expansion, double _contractio
 	}
 }
 
-std::vector<vPoint>& NelderMead::Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint & FirstPoint)
+std::vector<vPoint> NelderMead::Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint & FirstPoint)
 {
 	if (A->GetDim() != F->GetDim()) {
 		//exception
@@ -50,13 +52,9 @@ std::vector<vPoint>& NelderMead::Optimize(const Area * A, const Function * F, co
 	for (int i = 0; i <= n; ++i) Approximation.push_back(simplex[i]);
 
 	do {
+		std::cout << Approximation.back() << std::endl;
 		//step 1 - Order
-		std::sort(&(simplex[0]), &(simplex[n]),
-			[&](const vPoint& X1, const vPoint& X2) {
-			return F->eval(X1) < F->eval(X2);
-		}
-		);
-
+		simplex.Sort(F);
 		Approximation.push_back(simplex[0]);
 
 		//step 2 - Centroid
@@ -101,7 +99,11 @@ std::vector<vPoint>& NelderMead::Optimize(const Area * A, const Function * F, co
 			simplex[i] *= shrink;
 			simplex[i] += simplex[0];
 		}
-	} while (!T->Stop(F, Approximation));
+
+		/*std::cout << Approximation.size() << " " << Approximation.back() << std::endl;
+		std::cout << T->Stop(F, Approximation) << std::endl;*/
+
+	} while (!(T->Stop(F, Approximation)));
 
 	return Approximation;
 }

@@ -117,9 +117,9 @@ vPoint & vPoint::operator/=(double scalar)
 
 std::ostream & operator<<(std::ostream & out, const vPoint & Point)
 {
-	out << "(";
-	for (int i = 0; i < Point.GetDim(); ++i) {
-		out << Point[i] << ", ";
+	out << "(" << Point[0];
+	for (int i = 1; i < Point.GetDim(); ++i) {
+		out << ", " << Point[i];
 	}
 	out << ")";
 	return out;

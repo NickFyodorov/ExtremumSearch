@@ -2,5 +2,5 @@
 
 double TestFunc02::eval(const vPoint & X) const
 {
-	return (X[2] - X[1]*X[1])*(X[2] - X[1] * X[1]) + (1 - X[1])*(1 - X[1]);
+	return (X[1] - X[0]*X[0])*(X[1] - X[0] * X[0]) + (1 - X[0])*(1 - X[0]);
 }

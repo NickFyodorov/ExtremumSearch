@@ -14,6 +14,6 @@ public:
 	double GetGamma() const { return gamma; }
 	bool SetP(double _p);
 	bool SetGamma(double _gamma);
-	virtual std::vector<vPoint>& Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint& FirstPoint);
+	virtual std::vector<vPoint> Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint& FirstPoint);
 	virtual char* Name() const { return "Random Search"; }
 };
