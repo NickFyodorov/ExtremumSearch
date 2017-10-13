@@ -7,11 +7,14 @@ NCube::NCube(int _dim) : Area(_dim)
 
 bool NCube::In(const vPoint & X) const
 {
-	bool ans = X.size() == GetDim();
+	bool ans = X.GetDim() == GetDim();
 
-	for (int i = 0; i < X.size() && ans; ++i) ans = ranges[i].In(X.subvec(i, i));
-
-	return false;
+	vPoint T(1);
+	for (int i = 0; i < X.GetDim() && ans; ++i) {
+		T[0] = X[i];
+		ans = ranges[i].In(T);
+	}
+	return ans;
 }
 
 vPoint & NCube::RandomPoint() const
@@ -38,7 +41,7 @@ Area * NCube::SubArea(const vPoint & X, double epsilon) const
 	for (int i = 0; i < GetDim(); ++i) {
 		T[0] = X[i];
 		pR = ranges[i].SubArea(T, epsilon);
-		ncube[i] = *(dynamic_cast<Range*>(pR));
+		ncube[i] = *((Range*)pR);
 		delete pR;
 	}
 

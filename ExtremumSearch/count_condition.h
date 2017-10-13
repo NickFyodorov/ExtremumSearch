@@ -2,7 +2,7 @@
 
 #include "terminal_condition.h"
 
-class CountCondition : TerminalCondition {
+class CountCondition : public TerminalCondition {
 private:
 	int max_count;
 public:

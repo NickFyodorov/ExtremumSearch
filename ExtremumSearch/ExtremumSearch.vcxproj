@@ -30,10 +30,15 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ncube.cpp" />
     <ClCompile Include="nelder_mead.cpp" />
-    <ClCompile Include="norm.cpp" />
     <ClCompile Include="random_search.cpp" />
     <ClCompile Include="range.cpp" />
     <ClCompile Include="Simplex.cpp" />
+    <ClCompile Include="test_func_01.cpp" />
+    <ClCompile Include="test_func_02.cpp" />
+    <ClCompile Include="test_func_03.cpp" />
+    <ClCompile Include="test_func_04.cpp" />
+    <ClCompile Include="test_func_05.cpp" />
+    <ClCompile Include="vpoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="area.h" />
@@ -43,12 +48,10 @@
     <ClInclude Include="condition_improvement.h" />
     <ClInclude Include="condition_x_difference.h" />
     <ClInclude Include="count_condition.h" />
-    <ClInclude Include="custom_defines.h" />
     <ClInclude Include="eps_condition.h" />
     <ClInclude Include="function.h" />
     <ClInclude Include="ncube.h" />
     <ClInclude Include="nelder_mead.h" />
-    <ClInclude Include="norm.h" />
     <ClInclude Include="optimization_method.h" />
     <ClInclude Include="random_seed.h" />
     <ClInclude Include="random_search.h" />
@@ -56,6 +59,13 @@
     <ClInclude Include="Simplex.h" />
     <ClInclude Include="smooth_function.h" />
     <ClInclude Include="terminal_condition.h" />
+    <ClInclude Include="test_func_01.h" />
+    <ClInclude Include="test_func_02.h" />
+    <ClInclude Include="test_func_03.h" />
+    <ClInclude Include="test_func_04.h" />
+    <ClInclude Include="test_func_05.h" />
+    <ClInclude Include="variables.h" />
+    <ClInclude Include="vpoint.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{137C3FE1-37FB-4CEB-BAF0-C8D78E6788BF}</ProjectGuid>

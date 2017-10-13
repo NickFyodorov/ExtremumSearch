@@ -1,15 +1,16 @@
 #pragma once
 
 #include "area.h"
-#include "custom_defines.h"
+
+#include "vpoint.h"
 
 class Simplex {
 private:
 	int dim;
-	vPointSeq vertices;
+	std::vector<vPoint> vertices;
 public:
 	Simplex(int _dim = 2);
-	Simplex(const vPointSeq& _vertices);
+	Simplex(const std::vector<vPoint>& _vertices);
 	virtual ~Simplex() {};
 	void MoveTo(const vPoint& X);
 	void Squeeze(const Area * A);

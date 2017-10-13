@@ -2,7 +2,7 @@
 
 #include "terminal_condition.h"
 
-class EpsCondition : TerminalCondition {
+class EpsCondition : public TerminalCondition {
 protected:
 	double epsilon;
 public:

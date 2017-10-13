@@ -1,15 +1,14 @@
 #pragma once
 
-#include <armadillo>
+
 #include <vector>
 
-#include "custom_defines.h"
 #include "area.h"
 #include "range.h"
 
 typedef std::vector<Range> RangeVec;
 
-class NCube : Area {
+class NCube : public Area {
 private:
 	RangeVec ranges;
 public:

@@ -3,7 +3,7 @@
 #include "function.h"
 #include "area.h"
 
-class SmoothFunction : Function {
+class SmoothFunction : public Function {
     Function * grad;
 public:
 	SmoothFunction(Area * _domain, Function * _grad = 0) : grad(_grad), Function(_domain) {}

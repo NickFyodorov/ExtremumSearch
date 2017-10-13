@@ -4,7 +4,9 @@
 #include "eps_condition.h"
 #include "smooth_function.h"
 
-class ConditionGrad : EpsCondition {
+class ConditionGrad : public EpsCondition {
 public:
-	virtual bool Stop(const Function * F, const vPointSeq& Approx) const;
+	ConditionGrad(double _eps) : EpsCondition(_eps) {}
+	~ConditionGrad() {}
+	virtual bool Stop(const Function * F, const std::vector<vPoint>& Approx) const;
 };

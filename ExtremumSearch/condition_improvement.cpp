@@ -1,7 +1,7 @@
 #include "condition_improvement.h"
 #include "count_condition.h"
 
-bool ConditionImprovement::Stop(const Function * F, const vPointSeq & Approx) const
+bool ConditionImprovement::Stop(const Function * F, const std::vector<vPoint> & Approx) const
 {
 	if (Approx.size() < GetMaxCount()) return false;
 

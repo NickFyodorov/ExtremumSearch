@@ -22,7 +22,7 @@ NelderMead::NelderMead(double _reflection, double _expansion, double _contractio
 	}
 }
 
-vPointSeq& NelderMead::Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint & FirstPoint)
+std::vector<vPoint>& NelderMead::Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint & FirstPoint)
 {
 	if (A->GetDim() != F->GetDim()) {
 		//exception
@@ -42,7 +42,7 @@ vPointSeq& NelderMead::Optimize(const Area * A, const Function * F, const Termin
 		}
 	}
 
-	vPointSeq Approximation;
+	std::vector<vPoint> Approximation;
 	Approximation.push_back(FirstPoint);
 
 	int n = A->GetDim();
@@ -51,7 +51,7 @@ vPointSeq& NelderMead::Optimize(const Area * A, const Function * F, const Termin
 
 	do {
 		//step 1 - Order
-		std::sort(simplex[0], simplex[n],
+		std::sort(&(simplex[0]), &(simplex[n]),
 			[&](const vPoint& X1, const vPoint& X2) {
 			return F->eval(X1) < F->eval(X2);
 		}
@@ -65,7 +65,10 @@ vPointSeq& NelderMead::Optimize(const Area * A, const Function * F, const Termin
 		Centroid /= n;
 
 		//step 3 - Reflection
-		vPoint Reflected = Centroid + reflection * (Centroid - simplex[n]);
+		vPoint Reflected(Centroid);
+		Reflected -= simplex[n];
+		Reflected *= reflection;
+		Reflected += Centroid;
 
 		if (F->eval(simplex[0]) <= F->eval(Reflected) && F->eval(Reflected) <= F->eval(simplex[n - 1])) {
 			simplex[n] = Reflected;
@@ -74,20 +77,30 @@ vPointSeq& NelderMead::Optimize(const Area * A, const Function * F, const Termin
 
 		//step 4 - Expansion
 		if (F->eval(Reflected) < F->eval(simplex[0])) {
-			vPoint Expanded = Centroid + expansion * (Reflected - Centroid);
+			vPoint Expanded(Reflected);
+			Expanded -= Centroid;
+			Expanded *= expansion;
+			Expanded += Centroid;
 			simplex[n] = (F->eval(Expanded) < F->eval(Reflected)) ? Expanded : Reflected;
 			continue;
 		}
 
 		//step 5 - Contraction
-		vPoint Contracted = Centroid + contraction * (simplex[n] - Centroid);
+		vPoint Contracted(simplex[n]);
+		Contracted -= Centroid;
+		Contracted *= contraction;
+		Contracted += Centroid;
 		if (F->eval(Contracted) < F->eval(simplex[n])) {
 			simplex[n] = Contracted;
 			continue;
 		}
 
 		//step 6 - Shrink
-		for (int i = 1; i <= n; ++i) simplex[i] = simplex[0] + shrink * (simplex[i] - simplex[0]);
+		for (int i = 1; i <= n; ++i) { 
+			simplex[i] -= simplex[0];
+			simplex[i] *= shrink;
+			simplex[i] += simplex[0];
+		}
 	} while (!T->Stop(F, Approximation));
 
 	return Approximation;

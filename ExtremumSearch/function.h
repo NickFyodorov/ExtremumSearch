@@ -1,12 +1,11 @@
 #pragma once
 
-#include <armadillo>
 
-#include "custom_defines.h"
+#include "vpoint.h"
 #include "area.h"
 
 class Function {
-private:
+protected:
 	Area * domain;
 public:
     Function(Area * _domain) : domain(_domain) {}

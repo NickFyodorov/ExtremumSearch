@@ -18,7 +18,5 @@ Area * Range::SubArea(const vPoint & X, double epsilon) const
 		//exception
 	}
 
-	Range R(X[0] - epsilon, X[0] + epsilon);
-
-	return &R;
+	return new Range(X[0] - epsilon, X[0] + epsilon);
 }

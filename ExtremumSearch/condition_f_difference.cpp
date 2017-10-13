@@ -1,6 +1,6 @@
 #include "condition_f_difference.h"
 
-bool ConditionFDiff::Stop(const Function * F, const vPointSeq & Approx) const
+bool ConditionFDiff::Stop(const Function * F, const std::vector<vPoint> & Approx) const
 {
 	int n = Approx.size();
 	if (n > 1) {

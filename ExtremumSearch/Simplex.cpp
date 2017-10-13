@@ -2,7 +2,7 @@
 
 Simplex::Simplex(int _dim) : dim(_dim)
 {
-	vPoint X(dim, arma::fill::zeros);
+	vPoint X(dim);
 	vertices.push_back(X);
 	for (int i = 0; i < dim; ++i) {
 		X[i] = 1;
@@ -11,7 +11,7 @@ Simplex::Simplex(int _dim) : dim(_dim)
 	}
 }
 
-Simplex::Simplex(const vPointSeq & _vertices) : dim(_vertices[0].n_elem)
+Simplex::Simplex(const std::vector<vPoint> & _vertices) : dim(_vertices[0].GetDim())
 {
 
 	if (vertices.size() != (dim + 1)) {
@@ -19,7 +19,7 @@ Simplex::Simplex(const vPointSeq & _vertices) : dim(_vertices[0].n_elem)
 	}
 
 	for (int i = 0; i < _vertices.size(); ++i) {
-		if (_vertices[i].n_elem != dim) {
+		if (_vertices[i].GetDim() != dim) {
 			//exception
 		}
 	}
@@ -36,7 +36,8 @@ void Simplex::MoveTo(const vPoint & X)
 	for (int i = 1; i < vertices.size(); ++i) Centroid += vertices[i];
 	Centroid /= vertices.size();
 
-	vPoint Offset = X - Centroid;
+	vPoint Offset(X);
+	Offset -= Centroid;
 
 	for (int i = 0; i < vertices.size(); ++i) vertices[i] += Offset;
 }
@@ -57,7 +58,7 @@ void Simplex::Squeeze(const Area * A)
 	bool all_in;
 	do {
 		all_in = true;
-		for (int i = 0; i < vertices.size; ++i) {
+		for (int i = 0; i < vertices.size(); ++i) {
 			if (!A->In(vertices[i])) {
 				all_in = false;
 				break;
@@ -65,8 +66,10 @@ void Simplex::Squeeze(const Area * A)
 		}
 		if (!all_in) {
 			squeeze *= 0.5;
-			for (int i = 0; i < vertices.size; ++i) {
-				vertices[i] = Centroid + squeeze * (vertices[i] - Centroid);
+			for (int i = 0; i < vertices.size(); ++i) {
+				vertices[i] -= Centroid;
+				vertices[i] *= squeeze;
+				vertices[i] += Centroid;
 			}
 		}
 	} while (!all_in);

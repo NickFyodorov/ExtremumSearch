@@ -1,9 +1,9 @@
 #pragma once
 
-#include <armadillo>
 #include <random>
 
-#include "custom_defines.h"
+
+#include "vpoint.h"
 #include "random_seed.h"
 
 class Area {

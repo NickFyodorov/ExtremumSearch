@@ -4,7 +4,9 @@
 #include "eps_condition.h"
 #include "count_condition.h"
 
-class ConditionImprovement : CountCondition {
+class ConditionImprovement : public CountCondition {
 public:
-	virtual bool Stop(const Function * F, const vPointSeq& Approx) const;
+	ConditionImprovement(int _mcount) : CountCondition(_mcount) {}
+	~ConditionImprovement() {}
+	virtual bool Stop(const Function * F, const std::vector<vPoint>& Approx) const;
 };

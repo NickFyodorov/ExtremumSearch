@@ -36,9 +36,6 @@
     <ClCompile Include="condition_x_difference.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="norm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="condition_f_difference.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -58,6 +55,24 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="range.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_func_01.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_func_02.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_func_03.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_func_04.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_func_05.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vpoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -81,9 +96,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ncube.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="custom_defines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="range.h">
@@ -110,9 +122,6 @@
     <ClInclude Include="condition_f_difference.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="norm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="eps_condition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -120,6 +129,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="condition_iter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_func_01.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_func_02.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_func_03.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_func_04.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="test_func_05.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="variables.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vpoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
