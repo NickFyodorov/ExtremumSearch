@@ -17,7 +17,7 @@ bool NCube::In(const vPoint & X) const
 	return ans;
 }
 
-vPoint & NCube::RandomPoint() const
+vPoint NCube::RandomPoint() const
 {
 	vPoint X(GetDim());
 
@@ -27,7 +27,7 @@ vPoint & NCube::RandomPoint() const
 	return X;
 }
 
-Area * NCube::SubArea(const vPoint & X, double epsilon) const
+std::shared_ptr<Area> NCube::SubArea(const vPoint & X, double epsilon) const
 {
 	if (!In(X)) {
 		//exception
@@ -35,13 +35,13 @@ Area * NCube::SubArea(const vPoint & X, double epsilon) const
 
 	vPoint T(1);
 
-	Area * pR = new NCube(GetDim());
+	std::shared_ptr<Area> pCube( new NCube(GetDim()));
 
 	for (int i = 0; i < GetDim(); ++i) {
 		T[0] = X[i];
-		(*((NCube*)pR))[i] = *((Range*)(ranges[i].SubArea(T, epsilon)));
-		delete pR;
+		dynamic_cast<NCube*>(pCube.get())->at(i) = *(dynamic_cast<Range*>(ranges[i].SubArea(T, epsilon).get()));
 	}
 
-	return pR;
+	return pCube;
+
 }

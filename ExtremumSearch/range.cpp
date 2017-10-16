@@ -2,7 +2,7 @@
 
 #include "range.h"
 
-vPoint & Range::RandomPoint() const
+vPoint Range::RandomPoint() const
 {
 	std::uniform_real_distribution<double> urng(GetMin(), GetMax());
 
@@ -12,11 +12,11 @@ vPoint & Range::RandomPoint() const
 	return X;
 }
 
-Area * Range::SubArea(const vPoint & X, double epsilon) const
+std::shared_ptr<Area> Range::SubArea(const vPoint & X, double epsilon) const
 {
 	if (!In(X)) {
 		//exception
 	}
 
-	return new Range(X[0] - epsilon, X[0] + epsilon);
+	return  std::shared_ptr<Area>(new Range(X[0] - epsilon, X[0] + epsilon));
 }

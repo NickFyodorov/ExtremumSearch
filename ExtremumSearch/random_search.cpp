@@ -23,17 +23,16 @@ std::vector<vPoint> RandomSearch::Optimize(const Area * A, const Function * F, c
 
 	std::bernoulli_distribution ber(p);
 
-	Area * pSubArea;
+	std::shared_ptr<Area> pSubArea;
 	double subarea_size = 1;
 	vPoint Current;
 
 	do {
 		if (ber(rng)) {
 			Current = A->RandomPoint();
-			std::cout << Current << std::endl;
 		}
 		else {
-			pSubArea = A->SubArea(*Approximation.end(), subarea_size);
+			pSubArea = A->SubArea(Approximation.back(), subarea_size);
 			do {
 				Current = pSubArea->RandomPoint();
 			} while (!A->In(Current));
