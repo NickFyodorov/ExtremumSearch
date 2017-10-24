@@ -1,19 +1,20 @@
 #pragma once
 
+#include <memory>
 
 #include "vpoint.h"
 #include "area.h"
 
 class Function {
 protected:
-	Area * domain;
+	std::shared_ptr<Area> domain;
 public:
-    Function(Area * _domain) : domain(_domain) {}
-	virtual ~Function() { domain = 0; }
+    Function(std::shared_ptr<Area> _domain) : domain(_domain) {}
+	virtual ~Function() { }
     virtual double eval(const vPoint& X) const = 0;
     int GetDim() const {
         return domain->GetDim();
     }
-	friend double CalcGrad(const Function * F, const vPoint& X, double delta);
-	friend double CalcHessian(const Function * F, const vPoint& X, double delta);
+	double operator()(const vPoint& X) const { return eval(X); }
+	friend double CalcGrad(std::shared_ptr<Function> F, const vPoint& X, double delta);
 };

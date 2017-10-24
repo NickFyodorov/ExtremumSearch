@@ -9,5 +9,5 @@ private:
 public:
 	ConditionXDiff(double _eps) : EpsCondition(_eps) {}
 	virtual ~ConditionXDiff() {}
-	virtual bool Stop(const Function * F, const std::vector<vPoint>& Approx) const;
+	virtual bool Stop(std::shared_ptr<Function> F, const std::vector<vPoint> & Approx, const std::vector<double> Evals) const;
 };

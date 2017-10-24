@@ -1,7 +1,6 @@
 #include "condition_iter.h"
 
-bool ConditionIter::Stop(const Function * F, const std::vector<vPoint> & Approx) const
+bool ConditionIter::Stop(std::shared_ptr<Function> F, const std::vector<vPoint> & Approx, const std::vector<double> Evals) const
 {
-	//std::cout << "In Iter: " << Approx.size() << std::endl;
 	return Approx.size() > GetMaxCount();
 }

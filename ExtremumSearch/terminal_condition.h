@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <memory>
 
 #include "function.h"
 #include "area.h"
@@ -8,5 +9,5 @@
 
 class TerminalCondition {
 public:
-    virtual bool Stop(const Function * F, const std::vector<vPoint>& Approx) const = 0;
+    virtual bool Stop(std::shared_ptr<Function> F, const std::vector<vPoint>& Approx, const std::vector<double>& Evals) const = 0;
 };

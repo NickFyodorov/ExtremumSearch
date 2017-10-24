@@ -49,104 +49,65 @@
 #include "Simplex.h"
 
 int main() {
-	std::vector<Range> Ranges = { Range(-100, 100), Range(-100, 100) };
-	std::vector<Area*> Areas = {
-		new NCube(Ranges),
-		new NCube,
-		new NCube
-	};
-	std::vector<Function*> Functions = {
-		new TestFunc01(Areas[0]),
-		new TestFunc02(Areas[0]),
-		new TestFunc03(Areas[0]),
-		new TestFunc04(Areas[0]),
-		new TestFunc05(Areas[0]) 
-	};
-	std::vector<OptimizationMethod*> OptMethods = {
-		new NelderMead,
-		new RandomSearch(1.0)
-	};
-	std::vector<TerminalCondition*> Conditions = {
-		new ConditionFDiff(eps),
-		new ConditionXDiff(eps),
-		new ConditionGrad(eps),
-		new ConditionIter(count),
-		new ConditionImprovement(count)
-	};
+	
 
-	std::vector<vPoint> Result;
+	bool next = true;
+	std::string command;
+	while (next) {
+		std::cin >> command;
+		std::stringstream comm_stream(command);
+		std::string buffer;
 
-	std::vector<vPoint> FirstPoints;
-	vPoint Point(2);
+		comm_stream >> buffer;
 
-	Point[0] = 0; Point[1] = 0;
-	FirstPoints.push_back(Point);
+		if (buffer == "exit") next = false;
+		else if (buffer == "area") {
+			comm_stream >> buffer;
+			if (buffer == "set") {
 
-	Point[0] = -5; Point[1] = -5;
-	FirstPoints.push_back(Point);
+			}
+			else if (buffer == "get") {
 
-	Point[0] = 10; Point[1] = 20;
-	FirstPoints.push_back(Point);
+			}
+			else std::cout << "Incorrect command parameters" << std::endl;
+		}
+		else if (buffer == "function") {
+			if (buffer == "set") {
 
-	//bool next = true;
-	//std::string command;
-	//while (next) {
-	//	std::cin >> command;
-	//	std::stringstream comm_stream(command);
-	//	std::string buffer;
+			}
+			else if (buffer == "get") {
 
-	//	comm_stream >> buffer;
+			}
+			else std::cout << "Incorrect command parameters" << std::endl;
+		}
+		else if (buffer == "method") {
+			if (buffer == "set") {
 
-	//	if (buffer == "exit") {
-	//		next = false;
-	//		break;
-	//	}
+			}
+			else if (buffer == "get") {
 
-	//	int func = 0;
-	//	if (buffer == "F01") func = 0;
-	//	if (buffer == "F02") func = 1;
-	//	if (buffer == "F03") func = 2;
-	//	if (buffer == "F04") func = 3;
-	//	if (buffer == "F05") func = 4;
+			}
+			else std::cout << "Incorrect command parameters" << std::endl;
+		}
+		else if (buffer == "condition") {
+			if (buffer == "set") {
 
-	//	comm_stream >> buffer;
+			}
+			else if (buffer == "get") {
 
-	//	int area = 0;
-	//	if (buffer == "Area0") area = 0;
-	//	if (buffer == "Area1") area = 1;
-	//	if (buffer == "Area2") area = 2;
-	//	if (buffer == "Area3") area = 3;
+			}
+			else std::cout << "Incorrect command parameters" << std::endl;
+		}
+		else if (buffer == "point") {
 
-	//	comm_stream >> buffer;
+		}
+		else if (buffer == "opt") {
 
-	//	int method = 0;
-	//	if (buffer == "Nelder") method = 0;
-	//	if (buffer == "Random") method = 1;
+		}
+		else if (buffer == "") continue;
+		else std::cout << "Unknown command" << std::endl;
+	}
 
-	//	comm_stream >> buffer;
-
-	//	int cond = 0;
-	//	if (buffer == "fDiff") cond = 0;
-	//	if (buffer == "xDiff") cond = 1;
-	//	if (buffer == "Grad") cond = 2;
-	//	if (buffer == "Iter") cond = 3;
-	//	if (buffer == "Improvement") cond = 4;
-
-	//	comm_stream >> buffer;
-	//	int first_point = 0;
-	//	if (buffer == "Zero") first_point = 0;
-	//	if (buffer == "(-5,-5)") first_point = 1;
-	//	if (buffer == "(10,20)") first_point = 2;
-
-	//	Result = OptMethods[0]->Optimize(Areas[0], Functions[0], Conditions[0], FirstPoints[0]);
-
-	//	std::cout << (Result.back()) << std::endl;
-	//}
-
-	Result = OptMethods[0]->Optimize(Areas[0], Functions[0], Conditions[3], FirstPoints[0]);
-	std::cout << "Result.size = " << Result.size() << std::endl;
-	//std::cout << Result.back() << std::endl;
-	//std::cout << ((ConditionIter*)Conditions[3])->GetMaxCount() << std::endl;
 	system("pause");
 	return 0;
 }

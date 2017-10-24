@@ -8,7 +8,7 @@
 
 class TestFunc05 : public Function {
 public:
-	TestFunc05(Area * _domain) : Function(_domain) {}
+	TestFunc05(std::shared_ptr<Area> _domain) : Function(_domain) {}
 	virtual ~TestFunc05() { domain = 0; }
 	virtual double eval(const vPoint& X) const;
 };

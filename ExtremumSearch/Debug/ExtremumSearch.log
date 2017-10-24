@@ -1,8 +1,8 @@
-﻿  random_search.cpp
-  nelder_mead.cpp
-  Generating Code...
-  Compiling...
-  main.cpp
-  Generating Code...
+﻿cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
+  ncube.cpp
+c:\github\extremumsearch\extremumsearch\ncube.h(24): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\ncube.h(25): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\ncube.h(24): warning C4715: 'NCube::at': not all control paths return a value
+c:\github\extremumsearch\extremumsearch\ncube.h(25): warning C4715: 'NCube::at': not all control paths return a value
   ExtremumSearch.vcxproj -> C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.exe
   ExtremumSearch.vcxproj -> C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.pdb (Full PDB)

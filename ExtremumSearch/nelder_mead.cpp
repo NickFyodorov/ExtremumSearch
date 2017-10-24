@@ -8,54 +8,45 @@
 NelderMead::NelderMead(double _reflection, double _expansion, double _contraction, double _shrink) : OptimizationMethod()
 {
 	if (!SetReflection(_reflection)) {
-		//exception
+		throw std::invalid_argument("Reflection parameter must be a positive number.");
 	}
 
 	if (!SetContraction(_contraction)) {
-		//exception
+		throw std::invalid_argument("Contraction parameter must be a number between 0 and 0.5.");
 	}
 
 	if (!SetExpansion(_expansion)) {
-		//exception
+		throw std::invalid_argument("Expansion parameter must be a number exceeding 1.");
 	}
 
 	if (!SetShrink(_shrink)) {
-		//exception
+		throw std::invalid_argument("Shrink parameter must be a number between 0 and 1.");
 	}
 }
 
-std::vector<vPoint> NelderMead::Optimize(const Area * A, const Function * F, const TerminalCondition * T, const vPoint & FirstPoint)
+OptResult NelderMead::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Function> F, std::shared_ptr<TerminalCondition> T, const vPoint & FirstPoint)
 {
-	if (A->GetDim() != F->GetDim()) {
-		//exception
-	}
+	if (A->GetDim() != F->GetDim())  throw std::invalid_argument("Function dimension and area dimension must be equal.");
+	if (!A->In(FirstPoint)) throw std::invalid_argument("First point must be in area.");
 
 	Simplex simplex(A->GetDim());
 	simplex.MoveTo(FirstPoint);
 	simplex.Squeeze(A);
 
-	if (A->GetDim() != simplex.Size() - 1) {
-		//exception
-	}
+	std::vector<vPoint> Approx;
+	Approx.push_back(FirstPoint);
 
-	for (int i = 0; i < simplex.Size(); ++i) {
-		if (!A->In(simplex[i])) {
-			//exception
-		}
-	}
-
-	std::vector<vPoint> Approximation;
-	Approximation.push_back(FirstPoint);
+	std::vector<double> Evals;
+	Evals.push_back(F->eval(FirstPoint));
 
 	int n = A->GetDim();
-
-	for (int i = 0; i <= n; ++i) Approximation.push_back(simplex[i]);
-
 	do {
-		std::cout << Approximation.back() << std::endl;
+		//step 0 - Squeeze
+		simplex.Squeeze(A);
+
 		//step 1 - Order
 		simplex.Sort(F);
-		Approximation.push_back(simplex[0]);
+		Approx.push_back(simplex[0]);
 
 		//step 2 - Centroid
 		vPoint Centroid(simplex[0]);
@@ -94,18 +85,26 @@ std::vector<vPoint> NelderMead::Optimize(const Area * A, const Function * F, con
 		}
 
 		//step 6 - Shrink
-		for (int i = 1; i <= n; ++i) { 
+		for (int i = 1; i <= n; ++i) {
 			simplex[i] -= simplex[0];
 			simplex[i] *= shrink;
 			simplex[i] += simplex[0];
 		}
 
-		/*std::cout << Approximation.size() << " " << Approximation.back() << std::endl;
-		std::cout << T->Stop(F, Approximation) << std::endl;*/
 
-	} while (!(T->Stop(F, Approximation)));
+	} while (!(T->Stop(F, Approx, Evals)));
 
-	return Approximation;
+	OptResult Res;
+
+	Res.Fun = F;
+	Res.OptArea = A;
+	Res.Approximations = Approx;
+	Res.Evaluations = Evals;
+	Res.Iterations = Evals.size();
+	Res.Result = Approx.back();
+	Res.ResFuncValue = Evals.back();
+
+	return Res;
 }
 
 bool NelderMead::SetReflection(double _reflection)

@@ -20,6 +20,26 @@ vPoint::vPoint(const vPoint & other) : dim(other.GetDim()), coordinates(other.co
 {
 }
 
+vPoint::vPoint(vPoint && other)
+{
+	dim = other.dim;
+	coordinates = std::move(other.coordinates);
+}
+
+vPoint & vPoint::operator=(const vPoint & other)
+{
+	dim = other.dim;
+	coordinates = other.coordinates;
+	return *this;
+}
+
+vPoint & vPoint::operator=(const vPoint && other)
+{
+	dim = other.dim;
+	coordinates = std::move(other.coordinates);
+	return *this;
+}
+
 vPoint & vPoint::operator+=(const vPoint & other)
 {
 	if (GetDim() != other.GetDim()) {
@@ -44,28 +64,6 @@ vPoint & vPoint::operator-=(const vPoint & other)
 	return *this;
 }
 
-vPoint & vPoint::operator+(const vPoint & other)
-{
-	if (GetDim() != other.GetDim()) {
-		//exception
-	}
-
-	vPoint Res(*this);
-
-	return Res += other;
-}
-
-vPoint & vPoint::operator+(double offset)
-{
-	vPoint Res(*this);
-	return Res += offset;
-}
-
-vPoint & vPoint::operator-(double offset)
-{
-	return operator+(-offset);
-}
-
 vPoint & vPoint::operator+=(double offset)
 {
 	for (int i = 0; i < GetDim(); ++i) (*this)[i] += offset;
@@ -77,22 +75,6 @@ vPoint & vPoint::operator-=(double offset)
 	return operator+=(-offset);
 }
 
-vPoint & vPoint::operator-(const vPoint & other)
-{
-	if (GetDim() != other.GetDim()) {
-		//exception
-	}
-
-	vPoint Res(*this);
-	return Res -= other;
-}
-
-vPoint & vPoint::operator*(double scalar)
-{
-	vPoint Res(*this);
-	return Res*= scalar;
-}
-
 vPoint & vPoint::operator*=(double scalar)
 {
 	for (int i = 0; i < GetDim(); ++i) {
@@ -101,18 +83,48 @@ vPoint & vPoint::operator*=(double scalar)
 	return *this;
 }
 
-vPoint & vPoint::operator/(double scalar)
-{
-	vPoint Res(*this);
-	return Res /= scalar;
-}
-
 vPoint & vPoint::operator/=(double scalar)
 {
 	for (int i = 0; i < GetDim(); ++i) {
 		(*this)[i] /= scalar;
 	}
 	return *this;
+}
+
+vPoint & operator+(const vPoint & left, const vPoint & right)
+{
+	vPoint res(left);
+	return res += right;
+}
+
+vPoint & operator-(const vPoint & left, const vPoint & right)
+{
+	vPoint res(left);
+	return res -= right;
+}
+
+vPoint & operator+(const vPoint & point, double offset)
+{
+	vPoint res(point);
+	return res += offset;
+}
+
+vPoint & operator-(const vPoint & point, double offset)
+{
+	vPoint res(point);
+	return res -= offset;
+}
+
+vPoint & operator*(const vPoint & point, double scalar)
+{
+	vPoint res(point);
+	return res *= scalar;
+}
+
+vPoint & operator/(const vPoint & point, double scalar)
+{
+	vPoint res(point);
+	return res /= scalar;
 }
 
 std::ostream & operator<<(std::ostream & out, const vPoint & Point)

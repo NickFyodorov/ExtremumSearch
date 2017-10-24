@@ -1,10 +1,8 @@
 #include "condition_f_difference.h"
 
-bool ConditionFDiff::Stop(const Function * F, const std::vector<vPoint> & Approx) const
+bool ConditionFDiff::Stop(std::shared_ptr<Function> F, const std::vector<vPoint> & Approx, const std::vector<double> Evals) const
 {
-	int n = Approx.size();
-	if (n > 1) {
-		if (abs(F->eval(Approx[n - 1]) - F->eval(Approx[n - 2])) < GetEps()) return true;
-	}
+	int n = Evals.size();
+	if ( n > 1 && abs(Evals[n-1] - Evals[n - 2]) < GetEps() ) return true;
 	return false;
 }

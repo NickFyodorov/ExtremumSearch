@@ -36,7 +36,7 @@ void Simplex::MoveTo(const vPoint & X)
 	for (int i = 0; i < vertices.size(); ++i) vertices[i] += Offset;
 }
 
-void Simplex::Squeeze(const Area * A)
+void Simplex::Squeeze(std::shared_ptr<Area> A)
 {
 	double squeeze = 1;
 	vPoint tmp;
@@ -60,7 +60,7 @@ void Simplex::Squeeze(const Area * A)
 	} while (!all_in);
 }
 
-void Simplex::Sort(const Function * F)
+void Simplex::Sort(std::shared_ptr<Function> F)
 {
 	std::sort(vertices.begin(), vertices.end(), [&](const vPoint& X1, const vPoint& X2) {return F->eval(X1) < F->eval(X2); });
 }

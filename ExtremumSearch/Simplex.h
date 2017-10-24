@@ -16,9 +16,9 @@ public:
 	Simplex(const std::vector<vPoint>& _vertices);
 	virtual ~Simplex() {};
 	void MoveTo(const vPoint& X);
-	void Squeeze(const Area * A);
+	void Squeeze(std::shared_ptr<Area> A);
 	const vPoint& operator[](int index) const { return vertices[index]; }
 	vPoint& operator[](int index) { return vertices[index]; }
 	int Size() const { return vertices.size(); }
-	void Sort(const Function * F);
+	void Sort(std::shared_ptr<Function> F);
 };
