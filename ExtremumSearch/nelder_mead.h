@@ -22,4 +22,5 @@ public:
 	double GetExpansion() const { return expansion; }
 	double GetContraction() const { return contraction; }
 	double GetShrink() const { return shrink; }
+	virtual void Info() const;
 };

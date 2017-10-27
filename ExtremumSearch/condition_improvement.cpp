@@ -1,7 +1,7 @@
 #include "condition_improvement.h"
 #include "count_condition.h"
 
-bool ConditionImprovement::Stop(std::shared_ptr<Function> F, const std::vector<vPoint> & Approx, const std::vector<double> Evals) const
+bool ConditionImprovement::Stop(std::shared_ptr<Function> F, const std::vector<vPoint> & Approx, const std::vector<double>& Evals) const
 {
 	if (Approx.size() < GetMaxCount()) return false;
 
@@ -12,4 +12,9 @@ bool ConditionImprovement::Stop(std::shared_ptr<Function> F, const std::vector<v
 	}
 
 	return true;
+}
+
+void ConditionImprovement::Info() const
+{
+	std::cout << "Condition Improvement(N = " << GetMaxCount() << ")";
 }

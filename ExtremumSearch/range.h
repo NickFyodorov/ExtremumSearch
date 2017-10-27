@@ -20,4 +20,9 @@ public:
 	virtual std::shared_ptr<Area> SubArea(const vPoint& X, double epsilon) const;
 	double GetMax() const { return max; }
 	double GetMin() const { return min; }
+	virtual void Info() const;
+	friend std::ostream& operator<<(std::ostream& out, std::shared_ptr<Range> R) {
+		R->Info();
+		return out;
+	}
 };

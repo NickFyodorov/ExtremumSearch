@@ -56,3 +56,8 @@ OptResult RandomSearch::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Functi
 
 	return Res;
 }
+
+void RandomSearch::Info() const
+{
+	std::cout << "Random Search(" << "P = " << GetP() << "," << "Gamma = " << GetGamma() << ")";
+}

@@ -19,8 +19,9 @@ public:
 	virtual bool In(const vPoint& X) const;
 	virtual vPoint RandomPoint() const;
 	virtual std::shared_ptr<Area> SubArea(const vPoint& X, double epsilon) const;
-	const Range& operator[](int index) const { return *ranges[index]; }
-	Range& operator[](int index) { return *ranges[index]; }
-	const Range& at(int index) const { if (index < 0 || index > ranges.size()) {/*exception*/ } else return *ranges[index]; }
-	Range& at(int index) { if (index < 0 || index > ranges.size()) {/*exception*/ } else return *ranges[index]; }
+	const Range& operator[](int index) const { return *(ranges[index]); }
+	Range& operator[](int index) { return *(ranges[index]); }
+	const Range& at(int index) const { if (index < 0 || index > ranges.size()) { throw std::out_of_range("Index out of range"); } return *(ranges[index]); }
+	Range& at(int index) { if (index < 0 || index > ranges.size()) { throw std::out_of_range("Index out of range"); } return *(ranges[index]); }
+	virtual void Info() const;
 };

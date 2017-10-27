@@ -16,4 +16,5 @@ public:
 	bool SetGamma(double _gamma);
 	virtual OptResult Optimize(std::shared_ptr<Area> A, std::shared_ptr<Function> F, std::shared_ptr<TerminalCondition> T, const vPoint& FirstPoint);
 	virtual char* Name() const { return "Random Search"; }
+	virtual void Info() const;
 };

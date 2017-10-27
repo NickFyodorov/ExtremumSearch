@@ -152,5 +152,8 @@
     <ClInclude Include="vpoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="commands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

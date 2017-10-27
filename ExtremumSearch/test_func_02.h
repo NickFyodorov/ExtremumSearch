@@ -11,4 +11,5 @@ public:
 	TestFunc02(std::shared_ptr<Area> _domain) : Function(_domain) {}
 	virtual ~TestFunc02() { domain = 0; }
 	virtual double eval(const vPoint& X) const;
+	virtual void Info() const;
 };

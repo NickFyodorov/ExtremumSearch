@@ -52,3 +52,11 @@ std::shared_ptr<Area> NCube::SubArea(const vPoint & X, double epsilon) const
 	return pCube;
 
 }
+
+void NCube::Info() const
+{
+	std::cout << ranges[0];
+	for (int i = 1; i < ranges.size(); ++i) {
+		std::cout << " x " << ranges[i];
+	}
+}

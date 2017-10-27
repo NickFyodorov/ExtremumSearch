@@ -4,6 +4,7 @@
 #include <string>
 #include <random>
 #include <vector>
+#include <map>
 
 #include <memory>
 #include <sstream>
@@ -13,6 +14,7 @@
 #include "random_seed.h"
 #include "vpoint.h"
 #include "variables.h"
+#include "commands.h"
 
 /* abstract headers */
 #include "area.h"
@@ -49,65 +51,15 @@
 #include "Simplex.h"
 
 int main() {
-	
+	Initialize();
 
-	bool next = true;
-	std::string command;
-	while (next) {
-		std::cin >> command;
-		std::stringstream comm_stream(command);
-		std::string buffer;
-
-		comm_stream >> buffer;
-
-		if (buffer == "exit") next = false;
-		else if (buffer == "area") {
-			comm_stream >> buffer;
-			if (buffer == "set") {
-
-			}
-			else if (buffer == "get") {
-
-			}
-			else std::cout << "Incorrect command parameters" << std::endl;
-		}
-		else if (buffer == "function") {
-			if (buffer == "set") {
-
-			}
-			else if (buffer == "get") {
-
-			}
-			else std::cout << "Incorrect command parameters" << std::endl;
-		}
-		else if (buffer == "method") {
-			if (buffer == "set") {
-
-			}
-			else if (buffer == "get") {
-
-			}
-			else std::cout << "Incorrect command parameters" << std::endl;
-		}
-		else if (buffer == "condition") {
-			if (buffer == "set") {
-
-			}
-			else if (buffer == "get") {
-
-			}
-			else std::cout << "Incorrect command parameters" << std::endl;
-		}
-		else if (buffer == "point") {
-
-		}
-		else if (buffer == "opt") {
-
-		}
-		else if (buffer == "") continue;
-		else std::cout << "Unknown command" << std::endl;
+	std::string command("");
+	while(true) {
+		std::cout << "> ";
+		getline(std::cin, command);
+		if (command == "exit") break;
+		std::stringstream commstream(command);
+		execute(commstream, Commands, Variables);
+		std::cout << std::endl;
 	}
-
-	system("pause");
-	return 0;
 }

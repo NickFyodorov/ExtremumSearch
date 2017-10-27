@@ -142,3 +142,9 @@ bool NelderMead::SetShrink(double _shrink)
 	}
 	return false;
 }
+
+void NelderMead::Info() const
+{
+	std::cout << "Nelder-Mead(";
+	std::cout << "R = " << GetReflection() << ", " << "C = " << GetContraction() << ", " << "E = " << GetExpansion() << ", " << "S = " << GetShrink() << ")";
+}
