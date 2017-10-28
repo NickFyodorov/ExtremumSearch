@@ -35,14 +35,14 @@ OptResult RandomSearch::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Functi
 			Current = A->RandomPoint();
 		}
 		else {
+			pSubArea.reset();
 			pSubArea = A->SubArea(Approx.back(), subarea_size);
-			do {
-				Current = pSubArea->RandomPoint();
-			} while (!A->In(Current));
+			Current = pSubArea->RandomPoint();
 			subarea_size *= gamma;
 		}
-		Approx.push_back(Current);
-		Evals.push_back(F->eval(Current));
+		double fEval = F->eval(Current);
+		Approx.push_back(Evals.back() < fEval ? Approx.back() : Current);
+		Evals.push_back(Evals.back() < fEval ? Evals.back() : fEval);
 	} while (!T->Stop(F, Approx, Evals));
 
 	OptResult Res;

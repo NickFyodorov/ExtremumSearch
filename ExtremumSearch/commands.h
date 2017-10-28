@@ -270,12 +270,11 @@ void command_add(std::stringstream& params, VarMap& variables) {
 		break;
 	case VarType::METHOD:
 		params >> param;
-		std::cout << std::endl << "method type:" << param << std::endl;
 		switch (MethodTypeMap[param])
 		{
 		case MethodType::NELDER:
-			params >> reflection >> contraction >> expansion >> shrink;
-			variables[varname] = std::static_pointer_cast<void>(std::make_shared<NelderMead>(reflection, contraction, expansion, shrink));
+			params >> reflection >> expansion >> contraction >> shrink;
+			variables[varname] = std::static_pointer_cast<void>(std::make_shared<NelderMead>(reflection, expansion, contraction, shrink));
 			break;
 		case MethodType::RANDOM:
 			params >> p >> gamma;
