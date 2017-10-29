@@ -1,3 +1,5 @@
-﻿  random_search.cpp
+﻿  main.cpp
+c:\github\extremumsearch\extremumsearch\ncube.h(24): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\ncube.h(25): warning C4018: '>': signed/unsigned mismatch
   ExtremumSearch.vcxproj -> C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.exe
   ExtremumSearch.vcxproj -> C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.pdb (Full PDB)

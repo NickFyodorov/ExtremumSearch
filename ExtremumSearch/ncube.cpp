@@ -4,7 +4,10 @@
 
 NCube::NCube(int _dim) : Area(_dim)
 {
-	ranges.reserve(_dim);
+	ranges.clear();
+	for (int i = 0; i < GetDim(); ++i) {
+		ranges.push_back(std::make_shared<Range>());
+	}
 }
 
 NCube::NCube(std::vector<double> & minimums, std::vector<double> & maximums) : Area(minimums.size())
@@ -39,16 +42,15 @@ std::shared_ptr<Area> NCube::SubArea(const vPoint & X, double epsilon) const
 {
 	if (!In(X)) throw std::invalid_argument("Point outside of area.");
 
-	std::shared_ptr<Area> pCube = std::make_shared<NCube>(GetDim());
-	std::shared_ptr<NCube> ptrCube = std::static_pointer_cast<NCube>(pCube);
+	std::vector<std::shared_ptr<Range>> ranges;
 
 	vPoint T(1);
 
 	for (int i = 0; i < GetDim(); ++i) {
 		T[0] = X[i];
-		ptrCube->at(i) = *std::static_pointer_cast<Range>(this->at(i).SubArea(T, epsilon));
+		ranges.push_back(std::static_pointer_cast<Range>(this->at(i).SubArea(T, epsilon)));
 	}
-
+	std::shared_ptr<Area> pCube = std::make_shared<NCube>(ranges);
 	return pCube;
 
 }
