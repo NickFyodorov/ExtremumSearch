@@ -57,14 +57,30 @@ typedef std::map<std::string, pcommand> CommandMap;
 
 template <typename T>
 std::shared_ptr<T> GetVariable(VarMap& varmap, std::string& varname) {
+	if (varmap.find(varname) == varmap.end()) {
+		std::stringstream message;
+		message << "Error: variable " << varname << " does not exist";
+		throw std::invalid_argument(message.str());
+	}
 	return std::static_pointer_cast<T>(varmap[varname]);
 }
 
 void execute(std::stringstream& command, CommandMap& commands, VarMap& variables) {
+	command.exceptions(std::ios::failbit);
 	std::string name;
 	command >> name;
-	
-	(*commands[name])(command, variables);
+
+	if (commands.find(name) == commands.end()) {
+		std::cout << "Error: command " << name << " does not exist" << std::endl;
+	}
+	else {
+		try {
+			(*commands[name])(command, variables);
+		}
+		catch (std::exception e) {
+			std::cout << e.what() << std::endl;
+		}
+	}
 }
 
 enum VarType {
@@ -163,7 +179,47 @@ void command_test(std::stringstream& params, VarMap& variables) {
 /* opt <fun> <area> <method> <condition> <point>*/
 void command_opt(std::stringstream& params, VarMap& variables) {
 	std::string fvar, areavar, methodvar, condvar, pvar;
-	params >> fvar >> areavar >> methodvar >> condvar >> pvar;
+
+	try {
+		params >> fvar;
+		if(fvar == "") throw std::invalid_argument("Error: function argument is missing with no default");
+	}
+	catch (...) {
+		if (params.fail()) throw std::invalid_argument("Error: failed to read function argument");
+	}
+
+	try {
+		params >> areavar;
+		if(areavar == "") throw std::invalid_argument("Error: area argument is missing with no default");
+	}
+	catch (...) {
+		if (params.fail()) throw std::invalid_argument("Error: failed to read area argument");
+	}
+
+	try {
+		params >> methodvar;
+		if(methodvar == "") throw std::invalid_argument("Error: optimization method argument is missing with no default");
+	}
+	catch (...) {
+		if (params.fail()) throw std::invalid_argument("Error: failed to read optimization method argument");
+	}
+
+	try {
+		params >> condvar;
+		if(condvar == "") throw std::invalid_argument("Error: terminal condition argument is missing with no default");
+	}
+	catch (...) {
+		if (params.fail()) throw std::invalid_argument("Error: failed to read terminal condition argument");
+	}
+
+	try {
+		params >> pvar;
+		if(pvar == "") throw std::invalid_argument("Error: first point argument is missing with no default");
+	}
+	catch (...) {
+		if (params.fail()) throw std::invalid_argument("Error: failed to read first point argument");
+	}
+
 	OptResult optres = GetVariable<OptimizationMethod>(variables, methodvar)->Optimize(
 		GetVariable<Area>(variables, areavar),
 		GetVariable<Function>(variables, fvar),
@@ -173,7 +229,12 @@ void command_opt(std::stringstream& params, VarMap& variables) {
 	std::shared_ptr<OptResult> optRes(new OptResult);
 	*optRes = optres;
 	std::string optresvar;
-	params >> optresvar;
+	try {
+		params >> optresvar;
+	}
+	catch (...) {
+		optresvar = "default";
+	}
 	variables[optresvar] = std::static_pointer_cast<void>(optRes);
 
 	std::cout << optRes->Result;
@@ -182,10 +243,22 @@ void command_opt(std::stringstream& params, VarMap& variables) {
 /* get <vartype> <varname>*/
 void command_get(std::stringstream& params, VarMap& variables) {
 	std::string vartype;
-	params >> vartype;
+	try {
+		if (params.eof()) throw std::invalid_argument("Error: variable type argument is missing with no default");
+		params >> vartype;
+	}
+	catch (...) {
+		if (params.fail()) throw std::invalid_argument("Error: failed to read variable type argument");
+	}
 
 	std::string varname;
-	params >> varname;
+	try {
+		if (params.eof()) throw std::invalid_argument("Error: variable name argument is missing with no default");
+		params >> varname;
+	}
+	catch (...) {
+		if (params.fail()) throw std::invalid_argument("Error: failed to read variable name argument");
+	}
 
 	switch (VarTypeMap[vartype])
 	{
@@ -205,7 +278,7 @@ void command_get(std::stringstream& params, VarMap& variables) {
 		std::cout << *GetVariable<vPoint>(variables, varname);
 		break;
 	default:
-		std::cout << "Incorrect Input";
+		throw std::invalid_argument("Error: incorrect variable type");
 		break;
 	}
 }
@@ -213,10 +286,22 @@ void command_get(std::stringstream& params, VarMap& variables) {
 /*add <vartype> <varname> [variable params]*/
 void command_add(std::stringstream& params, VarMap& variables) {
 	std::string vartype;
-	params >> vartype;
+	try {
+		if (params.eof()) throw std::invalid_argument("Error: variable type argument is missing with no default");
+		params >> vartype;
+	}
+	catch (...) {
+		if (params.fail()) throw std::invalid_argument("Error: failed to read variable type argument");
+	}
 
 	std::string varname;
-	params >> varname;
+	try {
+		if (params.eof()) throw std::invalid_argument("Error: variable name argument is missing with no default");
+		params >> varname;
+	}
+	catch (...) {
+		if (params.fail()) throw std::invalid_argument("Error: failed to read variable name argument");
+	}
 
 	std::string param;
 
@@ -231,37 +316,54 @@ void command_add(std::stringstream& params, VarMap& variables) {
 	switch (VarTypeMap[vartype])
 	{
 	case VarType::AREA:
-		params >> dim;
+		if (params.eof()) throw std::invalid_argument("Error: area dimension parameter is missing");
+		try { params >> dim; }
+		catch (...) { throw std::invalid_argument("Error: unable to read area dimension argument"); }
 		double min, max;
 		for (int i = 0; i < dim; ++i) {
-			params >> min;
-			params >> max;
+			if (params.eof()) throw std::invalid_argument("Error: range left bound parameter is missing");
+			try { params >> min; }
+			catch (...) { if (params.fail()) throw std::invalid_argument("Error: unable to read left range bound parameter"); }
+			if (params.eof()) throw std::invalid_argument("Error: range right bound parameter is missing");
+			try { params >> max; } catch(...) { if (params.fail()) throw std::invalid_argument("Error: unable to read right range bound parameter"); }
 			ranges.push_back(std::make_shared<Range>(min, max));
 		}
 		variables[varname] = std::static_pointer_cast<void>(std::make_shared<NCube>(ranges));
 		break;
 	case VarType::COND:
-		params >> param;
+		if (params.eof()) throw std::invalid_argument("Error: terminal condition type argument is missing");
+		try { params >> param; }
+		catch (...) { throw std::invalid_argument("Error: unable to read terminal condition type argument"); }
 		switch (CondTypeMap[param])
 		{
 		case CondType::ITER:
-			params >> maxiter;
+			if (params.eof()) throw std::invalid_argument("Error: maximal iterations argument is missing");
+			try { params >> maxiter;}
+			catch (...) { throw std::invalid_argument("Error: unable to read maximal iterations argument"); }
 			variables[varname] = std::static_pointer_cast<void>(std::make_shared<ConditionIter>(maxiter));
 			break;
 		case CondType::IMPROVEMENT:
-			params >> maxiter;
+			if (params.eof()) throw std::invalid_argument("Error: maximal iterations argument is missing");
+			try { params >> maxiter; }
+			catch (...) { throw std::invalid_argument("Error: unable to read maximal iterations argument"); }
 			variables[varname] = std::static_pointer_cast<void>(std::make_shared<ConditionImprovement>(maxiter));
 			break;
 		case CondType::XDIFF:
-			params >> eps;
+			if (params.eof()) throw std::invalid_argument("Error: epsilon argument is missing");
+			try { params >> eps; }
+			catch (...) { throw std::invalid_argument("Error: unable to read epsilon argument"); }
 			variables[varname] = std::static_pointer_cast<void>(std::make_shared<ConditionXDiff>(eps));
 			break;
 		case CondType::FDIFF:
-			params >> eps;
+			if (params.eof()) throw std::invalid_argument("Error: epsilon argument is missing");
+			try { params >> eps; }
+			catch (...) { throw std::invalid_argument("Error: unable to read epsilon argument"); }
 			variables[varname] = std::static_pointer_cast<void>(std::make_shared<ConditionFDiff>(eps));
 			break;
 		case CondType::GRAD:
-			params >> eps;
+			if (params.eof()) throw std::invalid_argument("Error: epsilon argument is missing");
+			try { params >> eps; }
+			catch (...) { throw std::invalid_argument("Error: unable to read epsilon argument"); }
 			variables[varname] = std::static_pointer_cast<void>(std::make_shared<ConditionGrad>(eps));
 			break;
 		default:
@@ -269,15 +371,33 @@ void command_add(std::stringstream& params, VarMap& variables) {
 		}
 		break;
 	case VarType::METHOD:
-		params >> param;
+		if (params.eof()) throw std::invalid_argument("Error: optimization method type argument is missing");
+		try { params >> param; }
+		catch (...) { throw std::invalid_argument("Error: unable to read optimization method type argument"); }
 		switch (MethodTypeMap[param])
 		{
 		case MethodType::NELDER:
-			params >> reflection >> expansion >> contraction >> shrink;
+			if (params.eof()) throw std::invalid_argument("Error: reflection argument is missing");
+			try { params >> reflection; }
+			catch (...) { throw std::invalid_argument("Error: unable to read reflection argument"); }
+			if (params.eof()) throw std::invalid_argument("Error: expansion argument is missing");
+			try { params >> expansion; }
+			catch (...) { throw std::invalid_argument("Error: unable to read expansion argument"); }
+			if (params.eof()) throw std::invalid_argument("Error: contraction argument is missing");
+			try { params >> contraction; }
+			catch (...) { throw std::invalid_argument("Error: unable to read contraction argument"); }
+			if (params.eof()) throw std::invalid_argument("Error: shrink argument is missing");
+			try { params >> shrink; }
+			catch (...) { throw std::invalid_argument("Error: unable to read shrink argument"); }
 			variables[varname] = std::static_pointer_cast<void>(std::make_shared<NelderMead>(reflection, expansion, contraction, shrink));
 			break;
 		case MethodType::RANDOM:
-			params >> p >> gamma;
+			if (params.eof()) throw std::invalid_argument("Error: p argument is missing");
+			try { params >> p; }
+			catch (...) { throw std::invalid_argument("Error: unable to read p argument"); }
+			if (params.eof()) throw std::invalid_argument("Error: gamma argument is missing");
+			try { params >> gamma; }
+			catch (...) { throw std::invalid_argument("Error: unable to read gamma argument"); }
 			variables[varname] = std::static_pointer_cast<void>(std::make_shared<RandomSearch>(p, gamma));
 			break;
 		default:
@@ -285,10 +405,14 @@ void command_add(std::stringstream& params, VarMap& variables) {
 		}
 		break;
 	case VarType::POINT:
-		params >> dim;
+		if (params.eof()) throw std::invalid_argument("Error: point dimension argument is missing");
+		try { params >> dim; }
+		catch (...) { throw std::invalid_argument("Error: unable to read point dimension argument"); }
 		double x;
 		for (int i = 0; i < dim; ++i) {
-			params >> x;
+			if (params.eof()) throw std::invalid_argument("Error: number of coordinates is less than the point dimension argument");
+			try { params >> x; }
+			catch (...) { throw std::invalid_argument("Error: unable to read point coordinate argument"); }
 			coords.push_back(x);
 		}
 		variables[varname] = std::static_pointer_cast<void>(std::make_shared<vPoint>(coords));
@@ -303,7 +427,9 @@ void command_add(std::stringstream& params, VarMap& variables) {
 
 void command_rm(std::stringstream& params, VarMap& variables) {
 	std::string varname;
-	params >> varname;
+	if (params.eof()) throw std::invalid_argument("Error: variable name argument is missing");
+	try { params >> varname; }
+	catch (...) { throw std::invalid_argument("Error: unable to read variable name argument"); }
 	variables.erase(varname);
 	std::cout << "variable " << varname << " erased successfully";
 }
