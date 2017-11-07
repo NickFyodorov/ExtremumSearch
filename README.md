@@ -11,9 +11,9 @@ test
 
 ## Command *get*
 Variable type options are:
-* **function** (also *fun*, *fn* ) - returns information about an existing function variable
+* **__function__** (also **__fun__**, **__fn__** ) - returns information about an existing function variable
   + Existing function variables: *f1*, *f2*, *f3*, *f4*, *f5*
-* **area**  - returns information about an existing area variable
-* **method** -  - returns information about an existing optimization method variable
-* **condition** (also *cond*)  - returns information about an existing terminal condition variable
-* **point** (also *pt*)  - returns information about an existing vector point variable
+* **__area__**  - returns information about an existing area variable
+* **__method__** -  - returns information about an existing optimization method variable
+* **__condition__** (also *cond*)  - returns information about an existing terminal condition variable
+* **__point__** (also *pt*)  - returns information about an existing vector point variable
