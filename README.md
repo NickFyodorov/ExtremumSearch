@@ -9,6 +9,7 @@ List of commands:
 * ` rm <variable name>`  - deletes an existing variable
 * ` opt <fn> <area> <method> <cond> <pt> [res]`  - runs optimization process
 * ` test`  - writes 'test OK'
+* ` exit` - exits the program
 
 ## Command *get*
 Syntax: `get <variable type> <variable name>`
@@ -90,11 +91,16 @@ Syntax: `test` - returns 'test OK'
 # Example
 Here is an example of console input/output
 
->```
+```
 > add area a 2 -100 100 -100 100
+variable a added successfully
 > add method nm nelder 1 2 0.5 0.5
+variable nm added successfully
 > add cond it iter 10000
+variable it added successfully
 > add pt x0 2 0 0
+variable x0 added successfully
 > opt f1 a nm it x0
-> (1; 1)
+(1; 1)
+> exit
 ```
