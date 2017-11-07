@@ -53,7 +53,30 @@ Options for condition type are:
 * **_iter_** - Stop after a certain number of iterations. Syntax: `add cond it iter <N>`
 * **_improvement_** (also **_improve_**) - Stop after failing to improve the result after a certain number of iterations. Syntax: `add cond imp improve <N>`
 * **_grad_** - Stop if gradient value is less than <param>. Syntax: `add cond g grad <eps>`
-* **_xdiff_** - Stop if $||X_{n} - X_{n-1}||$ < <param>, where $X_{n}, X_{n-1}$ are two last approximations.
+* **_xdiff_** - Stop if ||X_{n} - X_{n-1}|| < <param>, where X_{n}, X_{n-1} are two last approximations.
 Syntax: `add cond dx xdiff <eps>`
-* **_fdiff_** - Stop if $||f(X_{n}) - f(X_{n-1})||$ < <param>, where $X_{n}, X_{n-1}$ are two last approximations.
+* **_fdiff_** - Stop if ||f(X_{n}) - f(X_{n-1})|| < <param>, where X_{n}, X_{n-1} are two last approximations.
 Syntax: `add cond df fdiff <eps>`
+
+### Adding new point
+Syntax: `add pt <variable name> <dim> <coord_1> <coord_2> ... <coord_dim>`
+
+* `<dim>` - the dimension of the point
+* `<coord_1> <coord_2> ... <coord_dim>` - coordinates of the point ( _dim_ numbers)
+
+## Command _opt_
+` opt <fn> <area> <method> <cond> <pt> [res]` - runs the optimization process
+
+Parameters:
+* `<fn>` - function variable name
+* `<area>` - area variable name
+* `<method>` - optimization method variable name
+* `<cond>` - terminal condition variable name
+* `<pt>` - first point variable name
+* `[res]` - (optional) variable to which the result of optimization is saved
+
+## Command _rm_
+Syntax: `rm <variable name>` - deletes a variable
+
+## Command _test_
+Syntax: `test` - returns 'test OK'
