@@ -91,7 +91,7 @@ Syntax: `test` - returns 'test OK'
 # Example
 Here is an example of console input/output
 
->```
+```
 > add area a 2 -100 100 -100 100
 variable a added successfully
 > add method nm nelder 1 2 0.5 0.5
