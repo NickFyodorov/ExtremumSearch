@@ -89,7 +89,8 @@ Syntax: `test` - returns 'test OK'
 
 # Example
 Here is an example of console input/output
-```
+
+>```
 > add area a 2 -100 100 -100 100
 > add method nm nelder 1 2 0.5 0.5
 > add cond it iter 10000
