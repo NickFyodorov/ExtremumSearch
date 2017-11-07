@@ -10,6 +10,7 @@ List of commands:
 ``` 
 
 ## Command *get*
+Syntax: ```get <variable type> <variable name>```
 Variable type options are:
 * **_function_** (also **_fun_**, **_fn_** ) - returns information about an existing function variable
   + Existing function variables: **_f1_**, **_f2_**, **_f3_**, **_f4_**, **_f5_**
