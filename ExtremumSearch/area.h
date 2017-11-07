@@ -7,10 +7,6 @@
 #include "random_seed.h"
 
 /*!
-\file
-\author Nikita Fyodorov
-\version 1.0
-
 \section DESCRIPTION
 
 The Area class represents a multidimensional subset of real vector points
@@ -50,13 +46,13 @@ public:
 	returns the area dimension
 	\return the dimension of the area
 	*/
-	int GetDim() const { return dim; }
+	int GetDim() const { return dim; }///<returns the dimension of the area
 	/*!
-	abstract method that prints the information about the area to std::cout
+	writes information about the area to std::cout
 	*/
 	virtual void Info() const = 0;
 	/*!
-	
+	overloaded output to std::cout
 	*/
 	friend std::ostream& operator<<(std::ostream& out, std::shared_ptr<Area> A) {
 		A->Info();

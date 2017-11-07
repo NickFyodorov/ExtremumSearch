@@ -33,6 +33,7 @@
     <ClCompile Include="random_search.cpp" />
     <ClCompile Include="range.cpp" />
     <ClCompile Include="Simplex.cpp" />
+    <ClCompile Include="terminal_condition.cpp" />
     <ClCompile Include="test_func_01.cpp" />
     <ClCompile Include="test_func_02.cpp" />
     <ClCompile Include="test_func_03.cpp" />
