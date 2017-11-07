@@ -39,7 +39,7 @@ Examples:
 Syntax: `add method <variable name> <type> <parameters>
 
 Options for method type are:
-* **_nelder_** - Nelder-Mead method. Syntax is `add method <variable name> nelder <reflection> <expansion> <contraction> <shrink>` (See [] for the algorithm parameters clarification).
+* **_nelder_** - Nelder-Mead method. Syntax is `add method <variable name> nelder <reflection> <expansion> <contraction> <shrink>` (See [https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwiX1924i63XAhUIG5oKHVbrAS4QFggtMAE&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FNelder%25E2%2580%2593Mead_method&usg=AOvVaw20XiqVSSaOyUIaqFE6vzOX] for the algorithm parameters clarification).
 * **_random_** - Random Search method. Syntax is `add method <variable name> random <p> <gamma>`
 
 Examples:
