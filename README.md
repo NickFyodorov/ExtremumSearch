@@ -5,7 +5,7 @@ List of commands:
 1. add <variable type> <variable name> <variable data> - adds new variable
 2. get <variable type> <variable name> - shows information about an existing variable
 3. rm <variable name> - deletes an existing variable
-4. opt <function varname> <area var name> <method var name> <condition var name> <point var name> [result var name] - runs optimization process
+4. opt <fn varname> <area var name> <method var name> <cond var name> <pt var name> [res var name] - runs optimization process
 5. test - writes 'test OK'
 ``` 
 
