@@ -1,0 +1,52 @@
+\hypertarget{class_condition_improvement}{}\section{Condition\+Improvement Class Reference}
+\label{class_condition_improvement}\index{Condition\+Improvement@{Condition\+Improvement}}
+
+
+{\ttfamily \#include $<$condition\+\_\+improvement.\+h$>$}
+
+Inheritance diagram for Condition\+Improvement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_condition_improvement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_condition_improvement_aeff76aebcc0ce426a5dcd519547785be}\label{class_condition_improvement_aeff76aebcc0ce426a5dcd519547785be}} 
+\hyperlink{class_condition_improvement_aeff76aebcc0ce426a5dcd519547785be}{Condition\+Improvement} (int \+\_\+mcount)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_condition_improvement_a1148c246d35ac61028db95d8c9289427}\label{class_condition_improvement_a1148c246d35ac61028db95d8c9289427}} 
+\hyperlink{class_condition_improvement_a1148c246d35ac61028db95d8c9289427}{$\sim$\+Condition\+Improvement} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_condition_improvement_a012d8db22fd6fcf8a71ab0fb5ecc1940}{Stop} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ F, const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&Approx, const std\+::vector$<$ double $>$ \&Evals) const override
+\item 
+\mbox{\Hypertarget{class_condition_improvement_a88b5dfa7c724f8d75276d4a65eb1f398}\label{class_condition_improvement_a88b5dfa7c724f8d75276d4a65eb1f398}} 
+virtual void \hyperlink{class_condition_improvement_a88b5dfa7c724f8d75276d4a65eb1f398}{Info} () const
+\begin{DoxyCompactList}\small\item\em writes the name of the condition and the current value of \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+\hyperlink{class_condition_improvement}{Condition\+Improvement} class is derived from \hyperlink{class_count_condition}{Count\+Condition} and represents a terminal condition based with the method of termination based on the number of failures to improve the current approximation. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_condition_improvement_a012d8db22fd6fcf8a71ab0fb5ecc1940}\label{class_condition_improvement_a012d8db22fd6fcf8a71ab0fb5ecc1940}} 
+\index{Condition\+Improvement@{Condition\+Improvement}!Stop@{Stop}}
+\index{Stop@{Stop}!Condition\+Improvement@{Condition\+Improvement}}
+\subsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily bool Condition\+Improvement\+::\+Stop (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$}]{F,  }\item[{const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&}]{Approx,  }\item[{const std\+::vector$<$ double $>$ \&}]{Evals }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Overrides Terminal\+Condtion\+::\+Stop \begin{DoxyReturn}{Returns}
+F\+A\+L\+SE if in the last Count\+Condition\+::max\+\_\+count of iterations the approximation was not improved and T\+R\+UE otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_terminal_condition_ad6294bf2bd6f5e2c6164e461c24d3198}{Terminal\+Condition}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+condition\+\_\+improvement.\+h\item 
+condition\+\_\+improvement.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,55 @@
+\hypertarget{class_simplex}{}\section{Simplex Class Reference}
+\label{class_simplex}\index{Simplex@{Simplex}}
+
+
+{\ttfamily \#include $<$Simplex.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_simplex_a0556b901b7d46c7d4600aa5442f02585}\label{class_simplex_a0556b901b7d46c7d4600aa5442f02585}} 
+\hyperlink{class_simplex_a0556b901b7d46c7d4600aa5442f02585}{Simplex} (int \+\_\+dim=2)
+\begin{DoxyCompactList}\small\item\em creates a standard simplex with given size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simplex_ad227962dec843392bb95c02e106eb21c}\label{class_simplex_ad227962dec843392bb95c02e106eb21c}} 
+\hyperlink{class_simplex_ad227962dec843392bb95c02e106eb21c}{Simplex} (const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&\+\_\+vertices)
+\begin{DoxyCompactList}\small\item\em creates a simplex with given vertices \end{DoxyCompactList}\item 
+void \hyperlink{class_simplex_a78284170bf58df27fcd5a8df6de283f3}{Move\+To} (const \hyperlink{classv_point}{v\+Point} \&X)
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simplex_a8963be87ef81afde1c0865a71411eb1b}\label{class_simplex_a8963be87ef81afde1c0865a71411eb1b}} 
+void \hyperlink{class_simplex_a8963be87ef81afde1c0865a71411eb1b}{Squeeze} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$ A)
+\begin{DoxyCompactList}\small\item\em shrinks the simplex until it fits the area \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simplex_acf5182ffe99d4420d73ac6677175587a}\label{class_simplex_acf5182ffe99d4420d73ac6677175587a}} 
+const \hyperlink{classv_point}{v\+Point} \& \hyperlink{class_simplex_acf5182ffe99d4420d73ac6677175587a}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\begin{DoxyCompactList}\small\item\em returns a vertex of the simplex at given index \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simplex_a1da07de5cbb1433ea77ac92d6f68bfe7}\label{class_simplex_a1da07de5cbb1433ea77ac92d6f68bfe7}} 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{class_simplex_a1da07de5cbb1433ea77ac92d6f68bfe7}{operator\mbox{[}$\,$\mbox{]}} (int index)
+\begin{DoxyCompactList}\small\item\em returns a vertex of the simplex at given index \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simplex_a0c567acb24ab41c2bfde8c33ed6c4a11}\label{class_simplex_a0c567acb24ab41c2bfde8c33ed6c4a11}} 
+int \hyperlink{class_simplex_a0c567acb24ab41c2bfde8c33ed6c4a11}{Size} () const
+\begin{DoxyCompactList}\small\item\em returns the size of the simplex \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simplex_a78acd46dc28c213c8b16f2bce71d8e5a}\label{class_simplex_a78acd46dc28c213c8b16f2bce71d8e5a}} 
+void \hyperlink{class_simplex_a78acd46dc28c213c8b16f2bce71d8e5a}{Sort} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ F)
+\begin{DoxyCompactList}\small\item\em sorts the vertices of the simplex by comparing the evaluations of a function at each vertex \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+The \hyperlink{class_simplex}{Simplex} class is used by \hyperlink{class_nelder_mead}{Nelder\+Mead} and represents a simplex of vector points 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_simplex_a78284170bf58df27fcd5a8df6de283f3}\label{class_simplex_a78284170bf58df27fcd5a8df6de283f3}} 
+\index{Simplex@{Simplex}!Move\+To@{Move\+To}}
+\index{Move\+To@{Move\+To}!Simplex@{Simplex}}
+\subsubsection{\texorpdfstring{Move\+To()}{MoveTo()}}
+{\footnotesize\ttfamily void Simplex\+::\+Move\+To (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{X }\end{DoxyParamCaption})}
+
+
+
+destructor 
+
+offsets all vertices of the simplex by given vector point 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Simplex.\+h\item 
+Simplex.\+cpp\end{DoxyCompactItemize}

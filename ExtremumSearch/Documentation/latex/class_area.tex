@@ -1,0 +1,152 @@
+\hypertarget{class_area}{}\section{Area Class Reference}
+\label{class_area}\index{Area@{Area}}
+
+
+{\ttfamily \#include $<$area.\+h$>$}
+
+Inheritance diagram for Area\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_area}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_area_acb26df340d249e1704501d55cacbc93e}{Area} (int \+\_\+dim)
+\item 
+virtual \hyperlink{class_area_a5ed5a9705b2715f347b764894c5015f0}{$\sim$\+Area} ()
+\item 
+virtual bool \hyperlink{class_area_a08775973fcf205fb91654b25a08f6bea}{In} (const \hyperlink{classv_point}{v\+Point} \&X) const =0
+\item 
+virtual \hyperlink{classv_point}{v\+Point} \hyperlink{class_area_a8a921495c0cca4095c8386f7b48ef086}{Random\+Point} () const =0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$ \hyperlink{class_area_a8f28e6be12d6b1bf7217f51307ab937e}{Sub\+Area} (const \hyperlink{classv_point}{v\+Point} \&X, double epsilon) const =0
+\item 
+int \hyperlink{class_area_a4a7d5f99dd276ecc047fe75f448432ec}{Get\+Dim} () const
+\begin{DoxyCompactList}\small\item\em returns the dimension of the area \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_area_abc427001b3685b08cd836badffedfbbe}{Info} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_area_ad1b73c86b972c92515c26f9f6a78afab}\label{class_area_ad1b73c86b972c92515c26f9f6a78afab}} 
+int \hyperlink{class_area_ad1b73c86b972c92515c26f9f6a78afab}{dim}
+\begin{DoxyCompactList}\small\item\em the dimension of the area \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_area_ada6f29b8de500da1ce8e36efb839d484}{operator$<$$<$} (std\+::ostream \&out, std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$ A)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+The \hyperlink{class_area}{Area} class represents a multidimensional subset of real vector points 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_area_acb26df340d249e1704501d55cacbc93e}\label{class_area_acb26df340d249e1704501d55cacbc93e}} 
+\index{Area@{Area}!Area@{Area}}
+\index{Area@{Area}!Area@{Area}}
+\subsubsection{\texorpdfstring{Area()}{Area()}}
+{\footnotesize\ttfamily Area\+::\+Area (\begin{DoxyParamCaption}\item[{int}]{\+\_\+dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+constructor that sets the dimension of the area 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+dim} & the area dimension \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_area_a5ed5a9705b2715f347b764894c5015f0}\label{class_area_a5ed5a9705b2715f347b764894c5015f0}} 
+\index{Area@{Area}!````~Area@{$\sim$\+Area}}
+\index{````~Area@{$\sim$\+Area}!Area@{Area}}
+\subsubsection{\texorpdfstring{$\sim$\+Area()}{~Area()}}
+{\footnotesize\ttfamily virtual Area\+::$\sim$\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+destructor of the class 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_area_a4a7d5f99dd276ecc047fe75f448432ec}\label{class_area_a4a7d5f99dd276ecc047fe75f448432ec}} 
+\index{Area@{Area}!Get\+Dim@{Get\+Dim}}
+\index{Get\+Dim@{Get\+Dim}!Area@{Area}}
+\subsubsection{\texorpdfstring{Get\+Dim()}{GetDim()}}
+{\footnotesize\ttfamily int Area\+::\+Get\+Dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the dimension of the area 
+
+returns the area dimension \begin{DoxyReturn}{Returns}
+the dimension of the area 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_area_a08775973fcf205fb91654b25a08f6bea}\label{class_area_a08775973fcf205fb91654b25a08f6bea}} 
+\index{Area@{Area}!In@{In}}
+\index{In@{In}!Area@{Area}}
+\subsubsection{\texorpdfstring{In()}{In()}}
+{\footnotesize\ttfamily virtual bool Area\+::\+In (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{X }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+abstract method that indicates whether vector point is in the area 
+\begin{DoxyParams}{Parameters}
+{\em X} & vector point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the point is in the area and false otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_n_cube_a042595f5e33795b2b454c2da3e9f13e0}{N\+Cube}, and \hyperlink{class_range_abaec0363220c4fbedaca148a4790bc9e}{Range}.
+
+\mbox{\Hypertarget{class_area_abc427001b3685b08cd836badffedfbbe}\label{class_area_abc427001b3685b08cd836badffedfbbe}} 
+\index{Area@{Area}!Info@{Info}}
+\index{Info@{Info}!Area@{Area}}
+\subsubsection{\texorpdfstring{Info()}{Info()}}
+{\footnotesize\ttfamily virtual void Area\+::\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+writes information about the area to std\+::cout 
+
+Implemented in \hyperlink{class_n_cube_aa7387e8654574bf3f4a0e32633516451}{N\+Cube}, and \hyperlink{class_range_adcbfaa8ea3d2e6da005573fd8146e952}{Range}.
+
+\mbox{\Hypertarget{class_area_a8a921495c0cca4095c8386f7b48ef086}\label{class_area_a8a921495c0cca4095c8386f7b48ef086}} 
+\index{Area@{Area}!Random\+Point@{Random\+Point}}
+\index{Random\+Point@{Random\+Point}!Area@{Area}}
+\subsubsection{\texorpdfstring{Random\+Point()}{RandomPoint()}}
+{\footnotesize\ttfamily virtual \hyperlink{classv_point}{v\+Point} Area\+::\+Random\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+abstract method that returns a uniformly distributed random point from the area 
+
+Implemented in \hyperlink{class_n_cube_a44e37293282724b0454c4542fa001c60}{N\+Cube}, and \hyperlink{class_range_a71795faae3f99507eb999e7df0c248da}{Range}.
+
+\mbox{\Hypertarget{class_area_a8f28e6be12d6b1bf7217f51307ab937e}\label{class_area_a8f28e6be12d6b1bf7217f51307ab937e}} 
+\index{Area@{Area}!Sub\+Area@{Sub\+Area}}
+\index{Sub\+Area@{Sub\+Area}!Area@{Area}}
+\subsubsection{\texorpdfstring{Sub\+Area()}{SubArea()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\hyperlink{class_area}{Area}$>$ Area\+::\+Sub\+Area (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{X,  }\item[{double}]{epsilon }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+abstract method that returns a pointer to a neighbourhood of a point within the area 
+\begin{DoxyParams}{Parameters}
+{\em X} & vector point for which the neighbourhood is provided \\
+\hline
+{\em epsilon} & positive real number that indicates the size of the neighbourhood \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shared pointer to the neighbourhood of the point 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_n_cube_a88be716167199c626d1c5063b6929303}{N\+Cube}, and \hyperlink{class_range_ab75514ad9a6e950a15d901020a65119a}{Range}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_area_ada6f29b8de500da1ce8e36efb839d484}\label{class_area_ada6f29b8de500da1ce8e36efb839d484}} 
+\index{Area@{Area}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Area@{Area}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+overloaded output to std\+::cout 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+area.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+\hypertarget{class_optimization_method}{}\section{Optimization\+Method Class Reference}
+\label{class_optimization_method}\index{Optimization\+Method@{Optimization\+Method}}
+
+
+{\ttfamily \#include $<$optimization\+\_\+method.\+h$>$}
+
+Inheritance diagram for Optimization\+Method\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_optimization_method}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_optimization_method_a8490a7cd0e3334f7e61469377c7d4217}\label{class_optimization_method_a8490a7cd0e3334f7e61469377c7d4217}} 
+\hyperlink{class_optimization_method_a8490a7cd0e3334f7e61469377c7d4217}{Optimization\+Method} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_optimization_method_ab33ddd12499ebedbc73f125a65a21442}\label{class_optimization_method_ab33ddd12499ebedbc73f125a65a21442}} 
+virtual \hyperlink{class_optimization_method_ab33ddd12499ebedbc73f125a65a21442}{$\sim$\+Optimization\+Method} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_opt_result}{Opt\+Result} \hyperlink{class_optimization_method_a98a1e917667c3ca851cbcd9068b0a9d9}{Optimize} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$ A, std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ F, std\+::shared\+\_\+ptr$<$ \hyperlink{class_terminal_condition}{Terminal\+Condition} $>$ T, const \hyperlink{classv_point}{v\+Point} \&First\+Point)=0
+\item 
+\mbox{\Hypertarget{class_optimization_method_a2bb0f33d599675937787db8bd17197c1}\label{class_optimization_method_a2bb0f33d599675937787db8bd17197c1}} 
+virtual char $\ast$ \hyperlink{class_optimization_method_a2bb0f33d599675937787db8bd17197c1}{Name} () const =0
+\begin{DoxyCompactList}\small\item\em abstract method that returns the name of the method \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_optimization_method_adc3fa59ab209fd11044696319b45cf2a}\label{class_optimization_method_adc3fa59ab209fd11044696319b45cf2a}} 
+virtual void \hyperlink{class_optimization_method_adc3fa59ab209fd11044696319b45cf2a}{Info} () const =0
+\begin{DoxyCompactList}\small\item\em abstract method that writes the information about the method to std\+::cout \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_optimization_method_ad4282eaeda272e5bec7a542d1889253a}{operator$<$$<$} (std\+::ostream \&out, std\+::shared\+\_\+ptr$<$ \hyperlink{class_optimization_method}{Optimization\+Method} $>$ opt\+Method)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+The \hyperlink{class_optimization_method}{Optimization\+Method} class represent an optimization method with the method parameters 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_optimization_method_a98a1e917667c3ca851cbcd9068b0a9d9}\label{class_optimization_method_a98a1e917667c3ca851cbcd9068b0a9d9}} 
+\index{Optimization\+Method@{Optimization\+Method}!Optimize@{Optimize}}
+\index{Optimize@{Optimize}!Optimization\+Method@{Optimization\+Method}}
+\subsubsection{\texorpdfstring{Optimize()}{Optimize()}}
+{\footnotesize\ttfamily virtual \hyperlink{struct_opt_result}{Opt\+Result} Optimization\+Method\+::\+Optimize (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$}]{A,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$}]{F,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_terminal_condition}{Terminal\+Condition} $>$}]{T,  }\item[{const \hyperlink{classv_point}{v\+Point} \&}]{First\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+abstract method that runs the optimization process using the optimization method for a function in given area with given terminal condition 
+\begin{DoxyParams}{Parameters}
+{\em A} & pointer the area in which the function is optimized \\
+\hline
+{\em F} & pointer to the function that is optimized \\
+\hline
+{\em T} & pointer to the terminal condition for the method \\
+\hline
+{\em First\+Point} & vector point from which the optimization process begins \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{struct_opt_result}{Opt\+Result} structure with the result of the optimization 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_random_search_a869069d90b1c12ec67182f415be7e8ce}{Random\+Search}, and \hyperlink{class_nelder_mead_a67ad06a8e8f67f6c6a28bfe2d61afd08}{Nelder\+Mead}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_optimization_method_ad4282eaeda272e5bec7a542d1889253a}\label{class_optimization_method_ad4282eaeda272e5bec7a542d1889253a}} 
+\index{Optimization\+Method@{Optimization\+Method}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Optimization\+Method@{Optimization\+Method}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_optimization_method}{Optimization\+Method} $>$}]{opt\+Method }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+overloaded output operator for std\+::cout 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+optimization\+\_\+method.\+h\end{DoxyCompactItemize}

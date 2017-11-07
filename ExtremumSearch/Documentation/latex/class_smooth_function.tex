@@ -1,0 +1,42 @@
+\hypertarget{class_smooth_function}{}\section{Smooth\+Function Class Reference}
+\label{class_smooth_function}\index{Smooth\+Function@{Smooth\+Function}}
+
+
+{\ttfamily \#include $<$smooth\+\_\+function.\+h$>$}
+
+Inheritance diagram for Smooth\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_smooth_function}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_smooth_function_aef997deb82c58de84cefd6559faa563b}{Smooth\+Function} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$ \+\_\+domain, std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ \+\_\+grad=0)
+\item 
+\mbox{\Hypertarget{class_smooth_function_a0248faaf91e0e718103573574c83a517}\label{class_smooth_function_a0248faaf91e0e718103573574c83a517}} 
+double \hyperlink{class_smooth_function_a0248faaf91e0e718103573574c83a517}{eval\+Grad} (const \hyperlink{classv_point}{v\+Point} \&X) const
+\begin{DoxyCompactList}\small\item\em returns the evaluation of the gradient function at given point \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_smooth_function_ac71c6ad9eeb1baf639d8fc6db333033c}\label{class_smooth_function_ac71c6ad9eeb1baf639d8fc6db333033c}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ \hyperlink{class_smooth_function_ac71c6ad9eeb1baf639d8fc6db333033c}{Get\+Grad} () const
+\begin{DoxyCompactList}\small\item\em returns a pointer to the gradient function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+The \hyperlink{class_smooth_function}{Smooth\+Function} class is derived from \hyperlink{class_function}{Function} and represents a smooth function with known gradient formula 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_smooth_function_aef997deb82c58de84cefd6559faa563b}\label{class_smooth_function_aef997deb82c58de84cefd6559faa563b}} 
+\index{Smooth\+Function@{Smooth\+Function}!Smooth\+Function@{Smooth\+Function}}
+\index{Smooth\+Function@{Smooth\+Function}!Smooth\+Function@{Smooth\+Function}}
+\subsubsection{\texorpdfstring{Smooth\+Function()}{SmoothFunction()}}
+{\footnotesize\ttfamily Smooth\+Function\+::\+Smooth\+Function (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$}]{\+\_\+domain,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$}]{\+\_\+grad = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+sets the domain and gradient function values of the smooth function 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+smooth\+\_\+function.\+h\end{DoxyCompactItemize}

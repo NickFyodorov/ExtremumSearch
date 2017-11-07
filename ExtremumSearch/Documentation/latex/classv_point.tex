@@ -1,0 +1,218 @@
+\hypertarget{classv_point}{}\section{v\+Point Class Reference}
+\label{classv_point}\index{v\+Point@{v\+Point}}
+
+
+{\ttfamily \#include $<$vpoint.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classv_point_ab3ac707d0f2109ade8ee78a20b076e0d}{v\+Point} (std\+::vector$<$ double $>$ \+\_\+coords)
+\item 
+\hyperlink{classv_point_ab08b85daf7ffc356d9241cd3f62acec9}{v\+Point} (int \+\_\+dim=2)
+\item 
+\mbox{\Hypertarget{classv_point_aea28f9a9e8148227ef6c7e6d8066f71f}\label{classv_point_aea28f9a9e8148227ef6c7e6d8066f71f}} 
+\hyperlink{classv_point_aea28f9a9e8148227ef6c7e6d8066f71f}{v\+Point} (const \hyperlink{classv_point}{v\+Point} \&other)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_a9417173a073a0438a0edc8b742351c68}\label{classv_point_a9417173a073a0438a0edc8b742351c68}} 
+\hyperlink{classv_point_a9417173a073a0438a0edc8b742351c68}{v\+Point} (\hyperlink{classv_point}{v\+Point} \&\&other)
+\begin{DoxyCompactList}\small\item\em move constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_a6ba561bfb51c682ec29c88fb25fa70eb}\label{classv_point_a6ba561bfb51c682ec29c88fb25fa70eb}} 
+virtual \hyperlink{classv_point_a6ba561bfb51c682ec29c88fb25fa70eb}{$\sim$v\+Point} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_a9e1f704bf5ededf6933c79a927a723b4}\label{classv_point_a9e1f704bf5ededf6933c79a927a723b4}} 
+int \hyperlink{classv_point_a9e1f704bf5ededf6933c79a927a723b4}{Get\+Dim} () const
+\begin{DoxyCompactList}\small\item\em returns the dimeision of the vector point \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_a72b0e383d2557164b7b859c70e4d2648}\label{classv_point_a72b0e383d2557164b7b859c70e4d2648}} 
+double \& \hyperlink{classv_point_a72b0e383d2557164b7b859c70e4d2648}{operator\mbox{[}$\,$\mbox{]}} (int index)
+\begin{DoxyCompactList}\small\item\em returns the coordinate of the vector point at given index \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_a6618a9c75691efbf3c034c3f3d09697d}\label{classv_point_a6618a9c75691efbf3c034c3f3d09697d}} 
+double \hyperlink{classv_point_a6618a9c75691efbf3c034c3f3d09697d}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\begin{DoxyCompactList}\small\item\em returns the coordinate of the vector point at given index \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_a93b3a66529a00011797a07b8084fd062}\label{classv_point_a93b3a66529a00011797a07b8084fd062}} 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_a93b3a66529a00011797a07b8084fd062}{operator=} (const \hyperlink{classv_point}{v\+Point} \&other)
+\begin{DoxyCompactList}\small\item\em copy operator \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_ab8419b418380071ae7b45293014991bf}\label{classv_point_ab8419b418380071ae7b45293014991bf}} 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_ab8419b418380071ae7b45293014991bf}{operator=} (const \hyperlink{classv_point}{v\+Point} \&\&other)
+\begin{DoxyCompactList}\small\item\em move operator \end{DoxyCompactList}\item 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_ad0a97769619fe728547c474f856bbd66}{operator+=} (const \hyperlink{classv_point}{v\+Point} \&other)
+\item 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_a3497af6c905c256e25fda5e0815bef56}{operator-\/=} (const \hyperlink{classv_point}{v\+Point} \&other)
+\item 
+\mbox{\Hypertarget{classv_point_a9b6165b57297692988ede20a59cd3379}\label{classv_point_a9b6165b57297692988ede20a59cd3379}} 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_a9b6165b57297692988ede20a59cd3379}{operator+=} (double offset)
+\begin{DoxyCompactList}\small\item\em offsetsthe vector point by addition of the offset value to each coordinate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_a2d087a030cd39df3b548e04ea6499c7b}\label{classv_point_a2d087a030cd39df3b548e04ea6499c7b}} 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_a2d087a030cd39df3b548e04ea6499c7b}{operator-\/=} (double offset)
+\begin{DoxyCompactList}\small\item\em offsetsthe vector point by subtraction of the offset value from each coordinate \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_a83ce0b6a8451d2aae4af1c84cc5b8abe}\label{classv_point_a83ce0b6a8451d2aae4af1c84cc5b8abe}} 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_a83ce0b6a8451d2aae4af1c84cc5b8abe}{operator$\ast$=} (double scalar)
+\begin{DoxyCompactList}\small\item\em multiplies each coordinate of the point by the scalar value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_ac0b1bd4a1f1e0472d1f21ea100c338d6}\label{classv_point_ac0b1bd4a1f1e0472d1f21ea100c338d6}} 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_ac0b1bd4a1f1e0472d1f21ea100c338d6}{operator/=} (double scalar)
+\begin{DoxyCompactList}\small\item\em divides each coordinate of the point by the scalar value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv_point_a01b26d19fd50e476447da555d6160bce}\label{classv_point_a01b26d19fd50e476447da555d6160bce}} 
+int \hyperlink{classv_point_a01b26d19fd50e476447da555d6160bce}{dim}
+\begin{DoxyCompactList}\small\item\em the dimension of the point (the number of point coordinates) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_a1bdcc85eb8914850b0c5e10aa97516de}\label{classv_point_a1bdcc85eb8914850b0c5e10aa97516de}} 
+std\+::vector$<$ double $>$ \hyperlink{classv_point_a1bdcc85eb8914850b0c5e10aa97516de}{coordinates}
+\begin{DoxyCompactList}\small\item\em std\+::vector of coordinates of the point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv_point_a1c4599f190a262e247ba7c3593b4cfe5}\label{classv_point_a1c4599f190a262e247ba7c3593b4cfe5}} 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_a1c4599f190a262e247ba7c3593b4cfe5}{operator+} (const \hyperlink{classv_point}{v\+Point} \&left, const \hyperlink{classv_point}{v\+Point} \&right)
+\begin{DoxyCompactList}\small\item\em returns the sum of two vector points \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_ae0fc32c8942991e5183ee6070d749bca}\label{classv_point_ae0fc32c8942991e5183ee6070d749bca}} 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_ae0fc32c8942991e5183ee6070d749bca}{operator-\/} (const \hyperlink{classv_point}{v\+Point} \&left, const \hyperlink{classv_point}{v\+Point} \&right)
+\begin{DoxyCompactList}\small\item\em subtracts one vector point from another and returns the result \end{DoxyCompactList}\item 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_ab409b6cbfb4ba84f7040ddcff0950ea3}{operator+} (const \hyperlink{classv_point}{v\+Point} \&point, double offset)
+\item 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_a989b20bf1e5537591771480106d3e641}{operator-\/} (const \hyperlink{classv_point}{v\+Point} \&point, double offset)
+\item 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_a3aab0a4b27ca1c92c3e690bfe7752ddd}{operator$\ast$} (const \hyperlink{classv_point}{v\+Point} \&point, double scalar)
+\item 
+\hyperlink{classv_point}{v\+Point} \& \hyperlink{classv_point_a71cb80dbf2851ffff4e92b87e38a3aaf}{operator/} (const \hyperlink{classv_point}{v\+Point} \&point, double scalar)
+\item 
+\mbox{\Hypertarget{classv_point_a5f06ca068d6617b91698fea5d816250e}\label{classv_point_a5f06ca068d6617b91698fea5d816250e}} 
+std\+::ostream \& \hyperlink{classv_point_a5f06ca068d6617b91698fea5d816250e}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classv_point}{v\+Point} \&Point)
+\begin{DoxyCompactList}\small\item\em writes the information about the vector point to an std\+::ostream object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv_point_ad65bf05cecb88ac33d7fa105e9ead1a7}\label{classv_point_ad65bf05cecb88ac33d7fa105e9ead1a7}} 
+double {\bfseries norm} (const \hyperlink{classv_point}{v\+Point} \&Point)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+The \hyperlink{classv_point}{v\+Point} class represents a vector point with real number coordinates 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classv_point_ab3ac707d0f2109ade8ee78a20b076e0d}\label{classv_point_ab3ac707d0f2109ade8ee78a20b076e0d}} 
+\index{v\+Point@{v\+Point}!v\+Point@{v\+Point}}
+\index{v\+Point@{v\+Point}!v\+Point@{v\+Point}}
+\subsubsection{\texorpdfstring{v\+Point()}{vPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily v\+Point\+::v\+Point (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{\+\_\+coords }\end{DoxyParamCaption})}
+
+constructor that sets the coordinates and dimension of the point based on the std\+::vector of coordinates 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+coords} & the coordinates of the vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv_point_ab08b85daf7ffc356d9241cd3f62acec9}\label{classv_point_ab08b85daf7ffc356d9241cd3f62acec9}} 
+\index{v\+Point@{v\+Point}!v\+Point@{v\+Point}}
+\index{v\+Point@{v\+Point}!v\+Point@{v\+Point}}
+\subsubsection{\texorpdfstring{v\+Point()}{vPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily v\+Point\+::v\+Point (\begin{DoxyParamCaption}\item[{int}]{\+\_\+dim = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+constructor that sets the dimension of the vector point and fills it with zeroes 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+dim} & the dimension of the point \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classv_point_ad0a97769619fe728547c474f856bbd66}\label{classv_point_ad0a97769619fe728547c474f856bbd66}} 
+\index{v\+Point@{v\+Point}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!v\+Point@{v\+Point}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \hyperlink{classv_point}{v\+Point} \& v\+Point\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{other }\end{DoxyParamCaption})}
+
+adds the coordinates of another vector point to this vector point 
+\begin{DoxyParams}{Parameters}
+{\em other} & vector point which is added to this vector point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting vector point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv_point_a3497af6c905c256e25fda5e0815bef56}\label{classv_point_a3497af6c905c256e25fda5e0815bef56}} 
+\index{v\+Point@{v\+Point}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!v\+Point@{v\+Point}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \hyperlink{classv_point}{v\+Point} \& v\+Point\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{other }\end{DoxyParamCaption})}
+
+subtracts the coordinates of another vector point to this vector point 
+\begin{DoxyParams}{Parameters}
+{\em other} & vector point which is subtracted this vector point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting vector point 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classv_point_a3aab0a4b27ca1c92c3e690bfe7752ddd}\label{classv_point_a3aab0a4b27ca1c92c3e690bfe7752ddd}} 
+\index{v\+Point@{v\+Point}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!v\+Point@{v\+Point}}
+\subsubsection{\texorpdfstring{operator$\ast$}{operator*}}
+{\footnotesize\ttfamily \hyperlink{classv_point}{v\+Point}\& operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{point,  }\item[{double}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & vector point coordinates of which are multiplied \\
+\hline
+{\em scalar} & a double by which the coordinates of the vector point are multiplied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector point with multiplied coordinates 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv_point_ab409b6cbfb4ba84f7040ddcff0950ea3}\label{classv_point_ab409b6cbfb4ba84f7040ddcff0950ea3}} 
+\index{v\+Point@{v\+Point}!operator+@{operator+}}
+\index{operator+@{operator+}!v\+Point@{v\+Point}}
+\subsubsection{\texorpdfstring{operator+}{operator+}}
+{\footnotesize\ttfamily \hyperlink{classv_point}{v\+Point}\& operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{point,  }\item[{double}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+offsets the coordinates of the point via addition of a real number to each coordinate 
+\begin{DoxyParams}{Parameters}
+{\em point} & the vector point that is being offset \\
+\hline
+{\em offset} & the double number that represents the offset value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector point with offset coordinates 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv_point_a989b20bf1e5537591771480106d3e641}\label{classv_point_a989b20bf1e5537591771480106d3e641}} 
+\index{v\+Point@{v\+Point}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!v\+Point@{v\+Point}}
+\subsubsection{\texorpdfstring{operator-\/}{operator-}}
+{\footnotesize\ttfamily \hyperlink{classv_point}{v\+Point}\& operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{point,  }\item[{double}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+offsets the coordinates of the point via subtraction of a real number to each coordinate 
+\begin{DoxyParams}{Parameters}
+{\em point} & the vector point that is being offset \\
+\hline
+{\em offset} & the double number that represents the offset value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector point with offset coordinates 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv_point_a71cb80dbf2851ffff4e92b87e38a3aaf}\label{classv_point_a71cb80dbf2851ffff4e92b87e38a3aaf}} 
+\index{v\+Point@{v\+Point}!operator/@{operator/}}
+\index{operator/@{operator/}!v\+Point@{v\+Point}}
+\subsubsection{\texorpdfstring{operator/}{operator/}}
+{\footnotesize\ttfamily \hyperlink{classv_point}{v\+Point}\& operator/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{point,  }\item[{double}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & vector point coordinates of which are divided \\
+\hline
+{\em scalar} & a double by which the coordinates of the vector point are divided \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector point with divided coordinates 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+vpoint.\+h\item 
+vpoint.\+cpp\end{DoxyCompactItemize}

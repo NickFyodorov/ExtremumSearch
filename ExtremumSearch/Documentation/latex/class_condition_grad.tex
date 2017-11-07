@@ -1,0 +1,53 @@
+\hypertarget{class_condition_grad}{}\section{Condition\+Grad Class Reference}
+\label{class_condition_grad}\index{Condition\+Grad@{Condition\+Grad}}
+
+
+{\ttfamily \#include $<$condition\+\_\+grad.\+h$>$}
+
+Inheritance diagram for Condition\+Grad\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_condition_grad}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_condition_grad_a117455621eed050b982af3797e4ae232}\label{class_condition_grad_a117455621eed050b982af3797e4ae232}} 
+\hyperlink{class_condition_grad_a117455621eed050b982af3797e4ae232}{Condition\+Grad} (double \+\_\+eps)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_condition_grad_a8320f7ec520c5a8a3f76981faccba3a8}\label{class_condition_grad_a8320f7ec520c5a8a3f76981faccba3a8}} 
+\hyperlink{class_condition_grad_a8320f7ec520c5a8a3f76981faccba3a8}{$\sim$\+Condition\+Grad} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_condition_grad_a28d97a0d0291b24976d4499b904190a7}{Stop} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ F, const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&Approx, const std\+::vector$<$ double $>$ \&Evals) const override
+\item 
+\mbox{\Hypertarget{class_condition_grad_a76f405067bfa70754c77dfadbaad5d3e}\label{class_condition_grad_a76f405067bfa70754c77dfadbaad5d3e}} 
+virtual void \hyperlink{class_condition_grad_a76f405067bfa70754c77dfadbaad5d3e}{Info} () const
+\begin{DoxyCompactList}\small\item\em writes the name of the condition and the current value of epsilon \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+Conditio\+Grad class is derived from \hyperlink{class_eps_condition}{Eps\+Condition} and represents a terminal condition based on the current value of the gradient of the function in the last approximation. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_condition_grad_a28d97a0d0291b24976d4499b904190a7}\label{class_condition_grad_a28d97a0d0291b24976d4499b904190a7}} 
+\index{Condition\+Grad@{Condition\+Grad}!Stop@{Stop}}
+\index{Stop@{Stop}!Condition\+Grad@{Condition\+Grad}}
+\subsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily bool Condition\+Grad\+::\+Stop (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$}]{F,  }\item[{const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&}]{Approx,  }\item[{const std\+::vector$<$ double $>$ \&}]{Evals }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Overrides \hyperlink{class_terminal_condition_ad6294bf2bd6f5e2c6164e461c24d3198}{Terminal\+Condition\+::\+Stop}. \begin{DoxyReturn}{Returns}
+T\+R\+UE if the absolute value of the gradient of the function for the last approximation is less than epsilon and F\+A\+L\+SE otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_terminal_condition_ad6294bf2bd6f5e2c6164e461c24d3198}{Terminal\+Condition}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+condition\+\_\+grad.\+h\item 
+condition\+\_\+grad.\+cpp\end{DoxyCompactItemize}

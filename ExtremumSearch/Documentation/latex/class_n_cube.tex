@@ -1,0 +1,131 @@
+\hypertarget{class_n_cube}{}\section{N\+Cube Class Reference}
+\label{class_n_cube}\index{N\+Cube@{N\+Cube}}
+
+
+{\ttfamily \#include $<$ncube.\+h$>$}
+
+Inheritance diagram for N\+Cube\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_n_cube}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_n_cube_ac5458bbe42846badcbd2100825a76556}{N\+Cube} (const Range\+Vec \&\+\_\+ranges)
+\item 
+\hyperlink{class_n_cube_a2eeaca555a32a13ed8fc58e2e83b1ec4}{N\+Cube} (int \+\_\+dim=2)
+\item 
+\hyperlink{class_n_cube_a6b4535debc936abca85e563f5b4e1d67}{N\+Cube} (std\+::vector$<$ double $>$ \&minimums, std\+::vector$<$ double $>$ \&maximums)
+\item 
+\mbox{\Hypertarget{class_n_cube_a7c2e9733c2a48e1c60397321166d688a}\label{class_n_cube_a7c2e9733c2a48e1c60397321166d688a}} 
+virtual \hyperlink{class_n_cube_a7c2e9733c2a48e1c60397321166d688a}{$\sim$\+N\+Cube} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_n_cube_a042595f5e33795b2b454c2da3e9f13e0}{In} (const \hyperlink{classv_point}{v\+Point} \&X) const
+\item 
+virtual \hyperlink{classv_point}{v\+Point} \hyperlink{class_n_cube_a44e37293282724b0454c4542fa001c60}{Random\+Point} () const
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$ \hyperlink{class_n_cube_a88be716167199c626d1c5063b6929303}{Sub\+Area} (const \hyperlink{classv_point}{v\+Point} \&X, double epsilon) const
+\item 
+\mbox{\Hypertarget{class_n_cube_a14a756408e6b20bb3537cc1e32f9032d}\label{class_n_cube_a14a756408e6b20bb3537cc1e32f9032d}} 
+const \hyperlink{class_range}{Range} \& \hyperlink{class_n_cube_a14a756408e6b20bb3537cc1e32f9032d}{operator\mbox{[}$\,$\mbox{]}} (int index) const
+\begin{DoxyCompactList}\small\item\em returns the range of the cube at given index \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_n_cube_a6018d8b57d76586cec10b6e4a2741e44}\label{class_n_cube_a6018d8b57d76586cec10b6e4a2741e44}} 
+\hyperlink{class_range}{Range} \& \hyperlink{class_n_cube_a6018d8b57d76586cec10b6e4a2741e44}{operator\mbox{[}$\,$\mbox{]}} (int index)
+\begin{DoxyCompactList}\small\item\em returns the range of the cube at given index \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_n_cube_a6e89fbd9fc41e833db790b6969b05e0e}\label{class_n_cube_a6e89fbd9fc41e833db790b6969b05e0e}} 
+const \hyperlink{class_range}{Range} \& \hyperlink{class_n_cube_a6e89fbd9fc41e833db790b6969b05e0e}{at} (int index) const
+\begin{DoxyCompactList}\small\item\em returns the range of the cube at given index but validates whether the index is in index range \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_n_cube_a4b10f642983c3c2d32f7b9c4ab5117a0}\label{class_n_cube_a4b10f642983c3c2d32f7b9c4ab5117a0}} 
+\hyperlink{class_range}{Range} \& \hyperlink{class_n_cube_a4b10f642983c3c2d32f7b9c4ab5117a0}{at} (int index)
+\begin{DoxyCompactList}\small\item\em returns the range of the cube at given index but validates whether the index is in index range \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_n_cube_aa7387e8654574bf3f4a0e32633516451}\label{class_n_cube_aa7387e8654574bf3f4a0e32633516451}} 
+virtual void \hyperlink{class_n_cube_aa7387e8654574bf3f4a0e32633516451}{Info} () const
+\begin{DoxyCompactList}\small\item\em writes the information about the cube and its ranges to std\+::cout \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+The \hyperlink{class_n_cube}{N\+Cube} class is derived from \hyperlink{class_area}{Area} and represents a multidimensional cube that consists of onedimensional ranges 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_n_cube_ac5458bbe42846badcbd2100825a76556}\label{class_n_cube_ac5458bbe42846badcbd2100825a76556}} 
+\index{N\+Cube@{N\+Cube}!N\+Cube@{N\+Cube}}
+\index{N\+Cube@{N\+Cube}!N\+Cube@{N\+Cube}}
+\subsubsection{\texorpdfstring{N\+Cube()}{NCube()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily N\+Cube\+::\+N\+Cube (\begin{DoxyParamCaption}\item[{const Range\+Vec \&}]{\+\_\+ranges }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+constructor that sets the ranges of the cube \mbox{\Hypertarget{class_n_cube_a2eeaca555a32a13ed8fc58e2e83b1ec4}\label{class_n_cube_a2eeaca555a32a13ed8fc58e2e83b1ec4}} 
+\index{N\+Cube@{N\+Cube}!N\+Cube@{N\+Cube}}
+\index{N\+Cube@{N\+Cube}!N\+Cube@{N\+Cube}}
+\subsubsection{\texorpdfstring{N\+Cube()}{NCube()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily N\+Cube\+::\+N\+Cube (\begin{DoxyParamCaption}\item[{int}]{\+\_\+dim = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+constructor that sets the dimension of the cube and fills it with standard ranges \mbox{\Hypertarget{class_n_cube_a6b4535debc936abca85e563f5b4e1d67}\label{class_n_cube_a6b4535debc936abca85e563f5b4e1d67}} 
+\index{N\+Cube@{N\+Cube}!N\+Cube@{N\+Cube}}
+\index{N\+Cube@{N\+Cube}!N\+Cube@{N\+Cube}}
+\subsubsection{\texorpdfstring{N\+Cube()}{NCube()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily N\+Cube\+::\+N\+Cube (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{minimums,  }\item[{std\+::vector$<$ double $>$ \&}]{maximums }\end{DoxyParamCaption})}
+
+constructor that sets the ranges of the cube to ranges with given left and right bounds 
+\begin{DoxyParams}{Parameters}
+{\em minimums} & std\+::vector of left bounds of the ranges \\
+\hline
+{\em maximums} & std\+::vector of right bounds of the ranges \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_cube_a042595f5e33795b2b454c2da3e9f13e0}\label{class_n_cube_a042595f5e33795b2b454c2da3e9f13e0}} 
+\index{N\+Cube@{N\+Cube}!In@{In}}
+\index{In@{In}!N\+Cube@{N\+Cube}}
+\subsubsection{\texorpdfstring{In()}{In()}}
+{\footnotesize\ttfamily bool N\+Cube\+::\+In (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{X }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+inhereted from \hyperlink{class_area}{Area} 
+\begin{DoxyParams}{Parameters}
+{\em X} & vector point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if coordinates of X are in within the ranges of the cube and false otherwise 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_area_a08775973fcf205fb91654b25a08f6bea}{Area}.
+
+\mbox{\Hypertarget{class_n_cube_a44e37293282724b0454c4542fa001c60}\label{class_n_cube_a44e37293282724b0454c4542fa001c60}} 
+\index{N\+Cube@{N\+Cube}!Random\+Point@{Random\+Point}}
+\index{Random\+Point@{Random\+Point}!N\+Cube@{N\+Cube}}
+\subsubsection{\texorpdfstring{Random\+Point()}{RandomPoint()}}
+{\footnotesize\ttfamily \hyperlink{classv_point}{v\+Point} N\+Cube\+::\+Random\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+inherited from \hyperlink{class_area}{Area} \begin{DoxyReturn}{Returns}
+a random vector point that is uniformly distributed in the cube 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_area_a8a921495c0cca4095c8386f7b48ef086}{Area}.
+
+\mbox{\Hypertarget{class_n_cube_a88be716167199c626d1c5063b6929303}\label{class_n_cube_a88be716167199c626d1c5063b6929303}} 
+\index{N\+Cube@{N\+Cube}!Sub\+Area@{Sub\+Area}}
+\index{Sub\+Area@{Sub\+Area}!N\+Cube@{N\+Cube}}
+\subsubsection{\texorpdfstring{Sub\+Area()}{SubArea()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$ N\+Cube\+::\+Sub\+Area (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{X,  }\item[{double}]{epsilon }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+inherited from \hyperlink{class_area}{Area} \begin{DoxyReturn}{Returns}
+intersection of epsilon cube around vector point X and this cube 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_area_a8f28e6be12d6b1bf7217f51307ab937e}{Area}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+ncube.\+h\item 
+ncube.\+cpp\end{DoxyCompactItemize}

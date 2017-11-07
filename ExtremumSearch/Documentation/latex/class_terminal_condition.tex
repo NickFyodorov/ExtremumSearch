@@ -1,0 +1,92 @@
+\hypertarget{class_terminal_condition}{}\section{Terminal\+Condition Class Reference}
+\label{class_terminal_condition}\index{Terminal\+Condition@{Terminal\+Condition}}
+
+
+{\ttfamily \#include $<$terminal\+\_\+condition.\+h$>$}
+
+Inheritance diagram for Terminal\+Condition\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.333333cm]{class_terminal_condition}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_terminal_condition_a4c95c14f8dd8e7b5d6e625ff438f53d3}{Terminal\+Condition} (long \+\_\+crititer=C\+R\+I\+T\+\_\+\+I\+T\+ER)
+\item 
+\mbox{\Hypertarget{class_terminal_condition_a824a95f1dbd4c295cdc9eee2a1f6b464}\label{class_terminal_condition_a824a95f1dbd4c295cdc9eee2a1f6b464}} 
+int \hyperlink{class_terminal_condition_a824a95f1dbd4c295cdc9eee2a1f6b464}{Get\+Crit\+Iter} () const
+\begin{DoxyCompactList}\small\item\em returns critical number of iterations \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_terminal_condition_ad6294bf2bd6f5e2c6164e461c24d3198}{Stop} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ F, const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&Approx, const std\+::vector$<$ double $>$ \&Evals) const
+\item 
+virtual void \hyperlink{class_terminal_condition_a55f2460a4776875211b0a4c3b449b40f}{Info} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_terminal_condition_a734331dfe86aa4863287602132c3ce97}{operator$<$$<$} (std\+::ostream \&out, std\+::shared\+\_\+ptr$<$ \hyperlink{class_terminal_condition}{Terminal\+Condition} $>$ T)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+The \hyperlink{class_terminal_condition}{Terminal\+Condition} class represents a method of termination of an optimization process based on the process state 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_terminal_condition_a4c95c14f8dd8e7b5d6e625ff438f53d3}\label{class_terminal_condition_a4c95c14f8dd8e7b5d6e625ff438f53d3}} 
+\index{Terminal\+Condition@{Terminal\+Condition}!Terminal\+Condition@{Terminal\+Condition}}
+\index{Terminal\+Condition@{Terminal\+Condition}!Terminal\+Condition@{Terminal\+Condition}}
+\subsubsection{\texorpdfstring{Terminal\+Condition()}{TerminalCondition()}}
+{\footnotesize\ttfamily Terminal\+Condition\+::\+Terminal\+Condition (\begin{DoxyParamCaption}\item[{long}]{\+\_\+crititer = {\ttfamily CRIT\+\_\+ITER} }\end{DoxyParamCaption})}
+
+constructor that sets the critical number of iterations to a given value 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_terminal_condition_a55f2460a4776875211b0a4c3b449b40f}\label{class_terminal_condition_a55f2460a4776875211b0a4c3b449b40f}} 
+\index{Terminal\+Condition@{Terminal\+Condition}!Info@{Info}}
+\index{Info@{Info}!Terminal\+Condition@{Terminal\+Condition}}
+\subsubsection{\texorpdfstring{Info()}{Info()}}
+{\footnotesize\ttfamily virtual void Terminal\+Condition\+::\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+writes the information about the terminal condition to std\+::cout 
+
+Implemented in \hyperlink{class_condition_grad_a76f405067bfa70754c77dfadbaad5d3e}{Condition\+Grad}, \hyperlink{class_condition_x_diff_a90e346147a31dafdf5e79809efc6babd}{Condition\+X\+Diff}, \hyperlink{class_condition_improvement_a88b5dfa7c724f8d75276d4a65eb1f398}{Condition\+Improvement}, \hyperlink{class_condition_iter_acc2c4303cd4bbc84abb9619af2f74e5c}{Condition\+Iter}, and \hyperlink{class_condition_f_diff_af632ec588748eeb234bd1df7e95f74ea}{Condition\+F\+Diff}.
+
+\mbox{\Hypertarget{class_terminal_condition_ad6294bf2bd6f5e2c6164e461c24d3198}\label{class_terminal_condition_ad6294bf2bd6f5e2c6164e461c24d3198}} 
+\index{Terminal\+Condition@{Terminal\+Condition}!Stop@{Stop}}
+\index{Stop@{Stop}!Terminal\+Condition@{Terminal\+Condition}}
+\subsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily virtual bool Terminal\+Condition\+::\+Stop (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$}]{F,  }\item[{const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&}]{Approx,  }\item[{const std\+::vector$<$ double $>$ \&}]{Evals }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+analyzes whether the optimization process should be terminated based on the current state of the optimization 
+\begin{DoxyParams}{Parameters}
+{\em F} & a pointer to the function that is being optimized \\
+\hline
+{\em Approx} & std\+::vector of approximation vector points \\
+\hline
+{\em Evals} & std\+::vector of function evaluations in approximation points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the condition requirements for termination are met and false otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_condition_grad_a28d97a0d0291b24976d4499b904190a7}{Condition\+Grad}, \hyperlink{class_condition_x_diff_a375e80eb4b88db5c2823a7d4efe20972}{Condition\+X\+Diff}, \hyperlink{class_condition_improvement_a012d8db22fd6fcf8a71ab0fb5ecc1940}{Condition\+Improvement}, \hyperlink{class_condition_iter_af9de25d536e5a9af7bd711e569356533}{Condition\+Iter}, and \hyperlink{class_condition_f_diff_a31b06f62d08ab7c2ec1b011148889aab}{Condition\+F\+Diff}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_terminal_condition_a734331dfe86aa4863287602132c3ce97}\label{class_terminal_condition_a734331dfe86aa4863287602132c3ce97}} 
+\index{Terminal\+Condition@{Terminal\+Condition}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Terminal\+Condition@{Terminal\+Condition}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_terminal_condition}{Terminal\+Condition} $>$}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+overloaded output operator for std\+::cout 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+terminal\+\_\+condition.\+h\item 
+terminal\+\_\+condition.\+cpp\end{DoxyCompactItemize}

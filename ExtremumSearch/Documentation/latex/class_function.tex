@@ -1,0 +1,140 @@
+\hypertarget{class_function}{}\section{Function Class Reference}
+\label{class_function}\index{Function@{Function}}
+Inheritance diagram for Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.696970cm]{class_function}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_function_a28c4db5ca9f2bbe27fd51ed0169bd2de}{Function} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$ \+\_\+domain)
+\item 
+virtual \hyperlink{class_function_a8697b2e490a4314a7ccbb17aea8ce537}{$\sim$\+Function} ()
+\item 
+virtual double \hyperlink{class_function_a8b9d55271a531b6f5bef09bfae0a23d9}{eval} (const \hyperlink{classv_point}{v\+Point} \&X) const =0
+\item 
+int \hyperlink{class_function_a531e81f5d7f7cafce7c211c08c3c7041}{Get\+Dim} () const
+\item 
+double \hyperlink{class_function_acc67abadb0c13fbe3a0cc96c65f2b55b}{operator()} (const \hyperlink{classv_point}{v\+Point} \&X) const
+\item 
+virtual void \hyperlink{class_function_a6915be18a065224ed73b1288c6125948}{Info} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_function_a809df8b9c6dc40e7853e96efa4756881}\label{class_function_a809df8b9c6dc40e7853e96efa4756881}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$ \hyperlink{class_function_a809df8b9c6dc40e7853e96efa4756881}{domain}
+\begin{DoxyCompactList}\small\item\em the domain of the function (the area in which the function is defined) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_function_ada3899626dabeaf7910d55f156499baf}{operator$<$$<$} (std\+::ostream \&out, std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ F)
+\item 
+double \hyperlink{class_function_a74f93e0ab18699467c6a96e4c500b256}{Calc\+Grad} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ F, const \hyperlink{classv_point}{v\+Point} \&X, double delta)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_function_a28c4db5ca9f2bbe27fd51ed0169bd2de}\label{class_function_a28c4db5ca9f2bbe27fd51ed0169bd2de}} 
+\index{Function@{Function}!Function@{Function}}
+\index{Function@{Function}!Function@{Function}}
+\subsubsection{\texorpdfstring{Function()}{Function()}}
+{\footnotesize\ttfamily Function\+::\+Function (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$}]{\+\_\+domain }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+constructor that sets the domain of the function 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+domain} & Domain of the function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_function_a8697b2e490a4314a7ccbb17aea8ce537}\label{class_function_a8697b2e490a4314a7ccbb17aea8ce537}} 
+\index{Function@{Function}!````~Function@{$\sim$\+Function}}
+\index{````~Function@{$\sim$\+Function}!Function@{Function}}
+\subsubsection{\texorpdfstring{$\sim$\+Function()}{~Function()}}
+{\footnotesize\ttfamily virtual Function\+::$\sim$\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+destructor of the class 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_function_a8b9d55271a531b6f5bef09bfae0a23d9}\label{class_function_a8b9d55271a531b6f5bef09bfae0a23d9}} 
+\index{Function@{Function}!eval@{eval}}
+\index{eval@{eval}!Function@{Function}}
+\subsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily virtual double Function\+::eval (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{X }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+abstract method that returns the result of evaluation of the function in given point 
+\begin{DoxyParams}{Parameters}
+{\em X} & The point in which the function is evaluated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double precision number which represents the result of the evaluation 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_test_func01_a50b43b414345a790599ef55960a81cdb}{Test\+Func01}, \hyperlink{class_test_func02_af4cbebcbe8a7bd282f48ae7053c044b0}{Test\+Func02}, \hyperlink{class_test_func03_a76417746f25346a1de704bfcac3eba47}{Test\+Func03}, \hyperlink{class_test_func04_a8c4666904611a414b985d17661847ec7}{Test\+Func04}, and \hyperlink{class_test_func05_a2848dbb9b76d0db3a701ce69ec700923}{Test\+Func05}.
+
+\mbox{\Hypertarget{class_function_a531e81f5d7f7cafce7c211c08c3c7041}\label{class_function_a531e81f5d7f7cafce7c211c08c3c7041}} 
+\index{Function@{Function}!Get\+Dim@{Get\+Dim}}
+\index{Get\+Dim@{Get\+Dim}!Function@{Function}}
+\subsubsection{\texorpdfstring{Get\+Dim()}{GetDim()}}
+{\footnotesize\ttfamily int Function\+::\+Get\+Dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the dimension of the function domain \begin{DoxyReturn}{Returns}
+the domain dimension 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_function_a6915be18a065224ed73b1288c6125948}\label{class_function_a6915be18a065224ed73b1288c6125948}} 
+\index{Function@{Function}!Info@{Info}}
+\index{Info@{Info}!Function@{Function}}
+\subsubsection{\texorpdfstring{Info()}{Info()}}
+{\footnotesize\ttfamily virtual void Function\+::\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+abstract method that prints the formula of the function 
+
+Implemented in \hyperlink{class_test_func01_a731cfb0260fe58f6eab02f11449737e0}{Test\+Func01}, \hyperlink{class_test_func02_abb39a10959e945371e662db3cd9d86ce}{Test\+Func02}, \hyperlink{class_test_func03_aab454f96f95f28f7ce1d58736d7fdf86}{Test\+Func03}, \hyperlink{class_test_func04_a7c2bf8c334c926cbfa464081e33ac30f}{Test\+Func04}, and \hyperlink{class_test_func05_a2a1c8696724c5195e92b4194d6205dcb}{Test\+Func05}.
+
+\mbox{\Hypertarget{class_function_acc67abadb0c13fbe3a0cc96c65f2b55b}\label{class_function_acc67abadb0c13fbe3a0cc96c65f2b55b}} 
+\index{Function@{Function}!operator()@{operator()}}
+\index{operator()@{operator()}!Function@{Function}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily double Function\+::operator() (\begin{DoxyParamCaption}\item[{const \hyperlink{classv_point}{v\+Point} \&}]{X }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the result of evaluation of the function in given point (equal to eval(\+X)) 
+\begin{DoxyParams}{Parameters}
+{\em X} & The point in which the function is evaluated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double precision number which represents the result of the evaluation 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_function_a74f93e0ab18699467c6a96e4c500b256}\label{class_function_a74f93e0ab18699467c6a96e4c500b256}} 
+\index{Function@{Function}!Calc\+Grad@{Calc\+Grad}}
+\index{Calc\+Grad@{Calc\+Grad}!Function@{Function}}
+\subsubsection{\texorpdfstring{Calc\+Grad}{CalcGrad}}
+{\footnotesize\ttfamily double Calc\+Grad (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$}]{F,  }\item[{const \hyperlink{classv_point}{v\+Point} \&}]{X,  }\item[{double}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+calculates gradient of the function F using formula\+: 1 / (2$\ast$dX) $\ast$ (F(X + dX) -\/ F(X -\/ dX)) \begin{DoxyReturn}{Returns}
+double precision number which represents the result of the gradient calculation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_function_ada3899626dabeaf7910d55f156499baf}\label{class_function_ada3899626dabeaf7910d55f156499baf}} 
+\index{Function@{Function}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Function@{Function}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$}]{F }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+prints the formula of the function std\+::cout stream 
+\begin{DoxyParams}{Parameters}
+{\em out} & output stream \\
+\hline
+{\em F} & shared pointer to the function, which formula is to be printed \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{function_8h}{function.\+h}\end{DoxyCompactItemize}

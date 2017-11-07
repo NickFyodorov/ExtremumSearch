@@ -1,0 +1,53 @@
+\hypertarget{class_condition_f_diff}{}\section{Condition\+F\+Diff Class Reference}
+\label{class_condition_f_diff}\index{Condition\+F\+Diff@{Condition\+F\+Diff}}
+
+
+{\ttfamily \#include $<$condition\+\_\+f\+\_\+difference.\+h$>$}
+
+Inheritance diagram for Condition\+F\+Diff\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_condition_f_diff}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_condition_f_diff_af123e2b22ecad36fe88f3eba2a9ec3b6}\label{class_condition_f_diff_af123e2b22ecad36fe88f3eba2a9ec3b6}} 
+\hyperlink{class_condition_f_diff_af123e2b22ecad36fe88f3eba2a9ec3b6}{Condition\+F\+Diff} (double \+\_\+eps)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_condition_f_diff_aebe3f77b561340000aebf0c97bd71144}\label{class_condition_f_diff_aebe3f77b561340000aebf0c97bd71144}} 
+virtual \hyperlink{class_condition_f_diff_aebe3f77b561340000aebf0c97bd71144}{$\sim$\+Condition\+F\+Diff} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_condition_f_diff_a31b06f62d08ab7c2ec1b011148889aab}{Stop} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ F, const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&Approx, const std\+::vector$<$ double $>$ \&Evals) const override
+\item 
+\mbox{\Hypertarget{class_condition_f_diff_af632ec588748eeb234bd1df7e95f74ea}\label{class_condition_f_diff_af632ec588748eeb234bd1df7e95f74ea}} 
+virtual void \hyperlink{class_condition_f_diff_af632ec588748eeb234bd1df7e95f74ea}{Info} () const
+\begin{DoxyCompactList}\small\item\em writes the name of the condition and the current value of epsilon \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+\hyperlink{class_condition_f_diff}{Condition\+F\+Diff} class is derived from \hyperlink{class_eps_condition}{Eps\+Condition} and represents a terminal condition based on the current value between the function evaluations of the last two approximations. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_condition_f_diff_a31b06f62d08ab7c2ec1b011148889aab}\label{class_condition_f_diff_a31b06f62d08ab7c2ec1b011148889aab}} 
+\index{Condition\+F\+Diff@{Condition\+F\+Diff}!Stop@{Stop}}
+\index{Stop@{Stop}!Condition\+F\+Diff@{Condition\+F\+Diff}}
+\subsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily bool Condition\+F\+Diff\+::\+Stop (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$}]{F,  }\item[{const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&}]{Approx,  }\item[{const std\+::vector$<$ double $>$ \&}]{Evals }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Overrides \hyperlink{class_terminal_condition_ad6294bf2bd6f5e2c6164e461c24d3198}{Terminal\+Condition\+::\+Stop} \begin{DoxyReturn}{Returns}
+T\+R\+UE if the absolute value of the difference of the function evaluations of the two last approximations is less than epsilon and F\+A\+L\+SE otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_terminal_condition_ad6294bf2bd6f5e2c6164e461c24d3198}{Terminal\+Condition}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+condition\+\_\+f\+\_\+difference.\+h\item 
+condition\+\_\+f\+\_\+difference.\+cpp\end{DoxyCompactItemize}

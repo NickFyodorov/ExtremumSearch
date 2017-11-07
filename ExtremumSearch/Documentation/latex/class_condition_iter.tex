@@ -1,0 +1,49 @@
+\hypertarget{class_condition_iter}{}\section{Condition\+Iter Class Reference}
+\label{class_condition_iter}\index{Condition\+Iter@{Condition\+Iter}}
+
+
+{\ttfamily \#include $<$condition\+\_\+iter.\+h$>$}
+
+Inheritance diagram for Condition\+Iter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_condition_iter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_condition_iter_a062d71109b94174f2efa1bab3fb0701d}\label{class_condition_iter_a062d71109b94174f2efa1bab3fb0701d}} 
+\hyperlink{class_condition_iter_a062d71109b94174f2efa1bab3fb0701d}{Condition\+Iter} (int \+\_\+mcount)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_condition_iter_af9de25d536e5a9af7bd711e569356533}{Stop} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ F, const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&Approx, const std\+::vector$<$ double $>$ \&Evals) const override
+\item 
+\mbox{\Hypertarget{class_condition_iter_acc2c4303cd4bbc84abb9619af2f74e5c}\label{class_condition_iter_acc2c4303cd4bbc84abb9619af2f74e5c}} 
+virtual void \hyperlink{class_condition_iter_acc2c4303cd4bbc84abb9619af2f74e5c}{Info} () const
+\begin{DoxyCompactList}\small\item\em writes the name of the method and the current value of maximum count of iterations \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+\hyperlink{class_condition_iter}{Condition\+Iter} class is derived from \hyperlink{class_count_condition}{Count\+Condition} and represents a terminal condition based on the current number of iterations. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_condition_iter_af9de25d536e5a9af7bd711e569356533}\label{class_condition_iter_af9de25d536e5a9af7bd711e569356533}} 
+\index{Condition\+Iter@{Condition\+Iter}!Stop@{Stop}}
+\index{Stop@{Stop}!Condition\+Iter@{Condition\+Iter}}
+\subsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily bool Condition\+Iter\+::\+Stop (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$}]{F,  }\item[{const std\+::vector$<$ \hyperlink{classv_point}{v\+Point} $>$ \&}]{Approx,  }\item[{const std\+::vector$<$ double $>$ \&}]{Evals }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Overrides \hyperlink{class_terminal_condition_ad6294bf2bd6f5e2c6164e461c24d3198}{Terminal\+Condition\+::\+Stop} \begin{DoxyReturn}{Returns}
+T\+R\+UE if the number of iteration exceeds the maximum count and F\+A\+L\+SE otherwise 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_terminal_condition_ad6294bf2bd6f5e2c6164e461c24d3198}{Terminal\+Condition}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+condition\+\_\+iter.\+h\item 
+condition\+\_\+iter.\+cpp\end{DoxyCompactItemize}

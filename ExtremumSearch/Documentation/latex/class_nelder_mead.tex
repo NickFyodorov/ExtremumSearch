@@ -1,0 +1,84 @@
+\hypertarget{class_nelder_mead}{}\section{Nelder\+Mead Class Reference}
+\label{class_nelder_mead}\index{Nelder\+Mead@{Nelder\+Mead}}
+
+
+{\ttfamily \#include $<$nelder\+\_\+mead.\+h$>$}
+
+Inheritance diagram for Nelder\+Mead\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_nelder_mead}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_nelder_mead_afbf2f00242cc95bd533c8bd6a5dfbba6}{Nelder\+Mead} (double \+\_\+reflection=1.\+0, double \+\_\+expansion=2.\+0, double \+\_\+contraction=0.\+5, double \+\_\+shrink=0.\+5)
+\item 
+\mbox{\Hypertarget{class_nelder_mead_a0b52b4a63babb9a1849c51de1445947c}\label{class_nelder_mead_a0b52b4a63babb9a1849c51de1445947c}} 
+virtual \hyperlink{class_nelder_mead_a0b52b4a63babb9a1849c51de1445947c}{$\sim$\+Nelder\+Mead} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_opt_result}{Opt\+Result} \hyperlink{class_nelder_mead_a67ad06a8e8f67f6c6a28bfe2d61afd08}{Optimize} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$ A, std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$ F, std\+::shared\+\_\+ptr$<$ \hyperlink{class_terminal_condition}{Terminal\+Condition} $>$ T, const \hyperlink{classv_point}{v\+Point} \&First\+Point)
+\item 
+\mbox{\Hypertarget{class_nelder_mead_a54134743c71c8790210b1249c577505e}\label{class_nelder_mead_a54134743c71c8790210b1249c577505e}} 
+virtual char $\ast$ \hyperlink{class_nelder_mead_a54134743c71c8790210b1249c577505e}{Name} () const
+\begin{DoxyCompactList}\small\item\em returns the name of the method \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nelder_mead_aa8844aa9b710ab1e611a071e8a2ef282}\label{class_nelder_mead_aa8844aa9b710ab1e611a071e8a2ef282}} 
+bool \hyperlink{class_nelder_mead_aa8844aa9b710ab1e611a071e8a2ef282}{Set\+Reflection} (double \+\_\+reflection)
+\begin{DoxyCompactList}\small\item\em sets the reflection parameter of the method with argument validation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nelder_mead_a07345c18aa9b15bf061b7b040cb1c485}\label{class_nelder_mead_a07345c18aa9b15bf061b7b040cb1c485}} 
+bool \hyperlink{class_nelder_mead_a07345c18aa9b15bf061b7b040cb1c485}{Set\+Expansion} (double \+\_\+expansion)
+\begin{DoxyCompactList}\small\item\em sets the expansion parameter of the method with argument validation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nelder_mead_a1ecc71f01ee28a75efa27addb041670e}\label{class_nelder_mead_a1ecc71f01ee28a75efa27addb041670e}} 
+bool \hyperlink{class_nelder_mead_a1ecc71f01ee28a75efa27addb041670e}{Set\+Contraction} (double \+\_\+contraction)
+\begin{DoxyCompactList}\small\item\em sets the contraction parameter of the method with argument validation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nelder_mead_a93d6e7b0cc0fdec157a7975c52c2da80}\label{class_nelder_mead_a93d6e7b0cc0fdec157a7975c52c2da80}} 
+bool \hyperlink{class_nelder_mead_a93d6e7b0cc0fdec157a7975c52c2da80}{Set\+Shrink} (double \+\_\+shrink)
+\begin{DoxyCompactList}\small\item\em sets the shrink parameter of the method with argument validation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nelder_mead_a8ef919184e1d3da6c126d1edf56162b2}\label{class_nelder_mead_a8ef919184e1d3da6c126d1edf56162b2}} 
+double \hyperlink{class_nelder_mead_a8ef919184e1d3da6c126d1edf56162b2}{Get\+Reflection} () const
+\begin{DoxyCompactList}\small\item\em returns the reflection parameter of the method \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nelder_mead_a819eb62e9a97129acb690753ddae7c0f}\label{class_nelder_mead_a819eb62e9a97129acb690753ddae7c0f}} 
+double \hyperlink{class_nelder_mead_a819eb62e9a97129acb690753ddae7c0f}{Get\+Expansion} () const
+\begin{DoxyCompactList}\small\item\em returns the expansion parameter of the method \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nelder_mead_a1b370090db3d9b58a662eab50a6ed3c9}\label{class_nelder_mead_a1b370090db3d9b58a662eab50a6ed3c9}} 
+double \hyperlink{class_nelder_mead_a1b370090db3d9b58a662eab50a6ed3c9}{Get\+Contraction} () const
+\begin{DoxyCompactList}\small\item\em returns the contraction parameter of the method \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nelder_mead_a2333e386995f2a3025ec61a20c5d3f0f}\label{class_nelder_mead_a2333e386995f2a3025ec61a20c5d3f0f}} 
+double \hyperlink{class_nelder_mead_a2333e386995f2a3025ec61a20c5d3f0f}{Get\+Shrink} () const
+\begin{DoxyCompactList}\small\item\em returns the shrink parameter of the method \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_nelder_mead_a651153fd9c477da6e2aeeb2473251506}\label{class_nelder_mead_a651153fd9c477da6e2aeeb2473251506}} 
+virtual void \hyperlink{class_nelder_mead_a651153fd9c477da6e2aeeb2473251506}{Info} () const
+\begin{DoxyCompactList}\small\item\em writes the information about the method and its arguments to std\+::cout \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hypertarget{function_8h_DESCRIPTION}{}\subsection{D\+E\+S\+C\+R\+I\+P\+T\+I\+ON}\label{function_8h_DESCRIPTION}
+The \hyperlink{class_nelder_mead}{Nelder\+Mead} class is derived from \hyperlink{class_optimization_method}{Optimization\+Method} and represents an instance of Nelder-\/\+Mead optimization algorithm with algorithm parameters 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_nelder_mead_afbf2f00242cc95bd533c8bd6a5dfbba6}\label{class_nelder_mead_afbf2f00242cc95bd533c8bd6a5dfbba6}} 
+\index{Nelder\+Mead@{Nelder\+Mead}!Nelder\+Mead@{Nelder\+Mead}}
+\index{Nelder\+Mead@{Nelder\+Mead}!Nelder\+Mead@{Nelder\+Mead}}
+\subsubsection{\texorpdfstring{Nelder\+Mead()}{NelderMead()}}
+{\footnotesize\ttfamily Nelder\+Mead\+::\+Nelder\+Mead (\begin{DoxyParamCaption}\item[{double}]{\+\_\+reflection = {\ttfamily 1.0},  }\item[{double}]{\+\_\+expansion = {\ttfamily 2.0},  }\item[{double}]{\+\_\+contraction = {\ttfamily 0.5},  }\item[{double}]{\+\_\+shrink = {\ttfamily 0.5} }\end{DoxyParamCaption})}
+
+constructor that sets the parameters of the method to the given values or to default values if no value is provided 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_nelder_mead_a67ad06a8e8f67f6c6a28bfe2d61afd08}\label{class_nelder_mead_a67ad06a8e8f67f6c6a28bfe2d61afd08}} 
+\index{Nelder\+Mead@{Nelder\+Mead}!Optimize@{Optimize}}
+\index{Optimize@{Optimize}!Nelder\+Mead@{Nelder\+Mead}}
+\subsubsection{\texorpdfstring{Optimize()}{Optimize()}}
+{\footnotesize\ttfamily \hyperlink{struct_opt_result}{Opt\+Result} Nelder\+Mead\+::\+Optimize (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_area}{Area} $>$}]{A,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_function}{Function} $>$}]{F,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_terminal_condition}{Terminal\+Condition} $>$}]{T,  }\item[{const \hyperlink{classv_point}{v\+Point} \&}]{First\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+inherited from \hyperlink{class_optimization_method}{Optimization\+Method} optimizes the function in given area using the Nelder-\/\+Mead algorithm 
+
+Implements \hyperlink{class_optimization_method_a98a1e917667c3ca851cbcd9068b0a9d9}{Optimization\+Method}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+nelder\+\_\+mead.\+h\item 
+nelder\+\_\+mead.\+cpp\end{DoxyCompactItemize}
