@@ -28,8 +28,8 @@ For variable type options see **Command** **_get_** (excluding **_function_**)
 ### Adding new area
 Syntax: `add area <area name> <dim> <left> <right> ... <left> <right>`
 
-`<dim>` - dimension of the area
-`<left> <right>` x _dim_ - left and right bounds of the ranges of the area
+* `<dim>` - dimension of the area
+* `<left> <right>` x _dim_ - left and right bounds of the ranges of the area
 
 Examples:
 * `add area a1 2 -10 10 -5 5` - adds a two-dimensional area (-10; 10) x (-5; 5)
