@@ -1,3 +1,6 @@
+# Description
+This program implements Random Search and Nelder-Mead function optimization methods for a function in a given area with a given terminal condition.
+
 # Commands
 
 List of commands:
