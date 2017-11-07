@@ -2,18 +2,18 @@
 
 List of commands:
 ```
-add <variable type> <variable name> <variable data>
-get <variable type> <variable name>
-rm <variable name>
-opt <function varname> <area var name> <method var name> <condition var name> <point var name> [result var name]
-test
+1. add <variable type> <variable name> <variable data> - adds new variable
+2. get <variable type> <variable name> - shows information about an existing variable
+3. rm <variable name> - deletes an existing variable
+4. opt <function varname> <area var name> <method var name> <condition var name> <point var name> [result var name] - runs optimization process
+5. test - writes 'test OK'
 ``` 
 
 ## Command *get*
 Variable type options are:
-* **__function__** (also **__fun__**, **__fn__** ) - returns information about an existing function variable
-  + Existing function variables: *f1*, *f2*, *f3*, *f4*, *f5*
-* **__area__**  - returns information about an existing area variable
-* **__method__** -  - returns information about an existing optimization method variable
-* **__condition__** (also *cond*)  - returns information about an existing terminal condition variable
-* **__point__** (also *pt*)  - returns information about an existing vector point variable
+* **_function_** (also **_fun_**, **_fn_** ) - returns information about an existing function variable
+  + Existing function variables: **_f1_**, **_f2_**, **_f3_**, **_f4_**, **_f5_**
+* **_area_**  - returns information about an existing area variable
+* **_method_** -  - returns information about an existing optimization method variable
+* **_condition_** (also **_cond_**)  - returns information about an existing terminal condition variable
+* **_point_** (also **_pt_**)  - returns information about an existing vector point variable
