@@ -1,6 +1,53 @@
-﻿  main.cpp
-c:\github\extremumsearch\extremumsearch\terminal_condition.h(17): warning C4018: '>': signed/unsigned mismatch
-c:\github\extremumsearch\extremumsearch\ncube.h(24): warning C4018: '>': signed/unsigned mismatch
-c:\github\extremumsearch\extremumsearch\ncube.h(25): warning C4018: '>': signed/unsigned mismatch
+﻿  terminal_condition.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+  condition_x_difference.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\condition_x_difference.cpp(6): warning C4018: '>': signed/unsigned mismatch
+  Generating Code...
+  Compiling...
+  vpoint.cpp
+  test_func_05.cpp
+  test_func_04.cpp
+  test_func_03.cpp
+  test_func_02.cpp
+  test_func_01.cpp
+  Simplex.cpp
+c:\github\extremumsearch\extremumsearch\simplex.cpp(21): warning C4018: '<': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\simplex.cpp(29): warning C4018: '<': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\simplex.cpp(36): warning C4018: '<': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\simplex.cpp(46): warning C4018: '<': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\simplex.cpp(54): warning C4018: '<': signed/unsigned mismatch
+  range.cpp
+  random_search.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+  nelder_mead.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+  ncube.cpp
+c:\github\extremumsearch\extremumsearch\ncube.h(54): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\ncube.h(55): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\ncube.cpp(61): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\ncube.h(54): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\ncube.h(55): warning C4018: '>': signed/unsigned mismatch
+  function.cpp
+  eps_condition.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+  count_condition.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+  condition_improvement.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\condition_improvement.cpp(6): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\condition_improvement.cpp(7): warning C4018: '<=': signed/unsigned mismatch
+  condition_grad.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\condition_grad.cpp(6): warning C4018: '>': signed/unsigned mismatch
+  condition_f_difference.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+  condition_iter.cpp
+c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\condition_iter.cpp(5): warning C4018: '>': signed/unsigned mismatch
+c:\github\extremumsearch\extremumsearch\condition_iter.cpp(6): warning C4018: '>': signed/unsigned mismatch
+  Generating Code...
   ExtremumSearch.vcxproj -> C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.exe
   ExtremumSearch.vcxproj -> C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.pdb (Full PDB)
