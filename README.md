@@ -52,10 +52,10 @@ Syntax: `add cond <variable name> <type> <param>`
 Options for condition type are:
 * **_iter_** - Stop after a certain number of iterations. Syntax: `add cond it iter <N>`
 * **_improvement_** (also **_improve_**) - Stop after failing to improve the result after a certain number of iterations. Syntax: `add cond imp improve <N>`
-* **_grad_** - Stop if gradient value is less than <param>. Syntax: `add cond g grad <eps>`
-* **_xdiff_** - Stop if ||X_{n} - X_{n-1}|| < <param>, where X_{n}, X_{n-1} are two last approximations.
+* **_grad_** - Stop if gradient value is less than `<param>`. Syntax: `add cond g grad <eps>`
+* **_xdiff_** - Stop if ||X_{n} - X_{n-1}|| is less than `<param>`, where X_{n}, X_{n-1} are two last approximations.
 Syntax: `add cond dx xdiff <eps>`
-* **_fdiff_** - Stop if ||f(X_{n}) - f(X_{n-1})|| < <param>, where X_{n}, X_{n-1} are two last approximations.
+* **_fdiff_** - Stop if ||f(X_{n}) - f(X_{n-1})|| is less than `<param>`, where X_{n}, X_{n-1} are two last approximations.
 Syntax: `add cond df fdiff <eps>`
 
 ### Adding new point
