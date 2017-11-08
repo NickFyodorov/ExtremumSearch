@@ -1,4 +1,0 @@
-﻿  nelder_mead.cpp
-c:\github\extremumsearch\extremumsearch\terminal_condition.h(32): warning C4018: '>': signed/unsigned mismatch
-  ExtremumSearch.vcxproj -> C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.exe
-  ExtremumSearch.vcxproj -> C:\GitHub\ExtremumSearch\ExtremumSearch\Debug\ExtremumSearch.pdb (Full PDB)
