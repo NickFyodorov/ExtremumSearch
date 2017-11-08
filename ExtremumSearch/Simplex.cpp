@@ -15,16 +15,16 @@ Simplex::Simplex(const std::vector<vPoint> & _vertices) : dim(_vertices[0].GetDi
 {
 
 	if (vertices.size() != (dim + 1)) {
-		//exception
+		throw std::invalid_argument("Simplex dimension must be equal to its veritices dimension plus one");
 	}
 
 	for (int i = 0; i < _vertices.size(); ++i) {
 		if (_vertices[i].GetDim() != dim) {
-			//exception
+			throw std::invalid_argument("Simplex vertices dimensions must be equal");
 		}
 	}
 
-	//check that it is a simplex
+	//check that it is a simplex (too complicated)
 
 	for (int i = 0; i < _vertices.size(); ++i) vertices.push_back(_vertices[i]);
 }

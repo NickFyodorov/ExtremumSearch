@@ -3,7 +3,7 @@
 EpsCondition::EpsCondition(double _eps)
 {
 	if (!SetEps(_eps)) {
-		//exception
+		throw std::invalid_argument("Epsilon must be a positive double");
 	}
 }
 
