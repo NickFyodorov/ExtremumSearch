@@ -47,6 +47,7 @@ OptResult NelderMead::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Function
 		//step 1 - Order
 		simplex.Sort(F);
 		Approx.push_back(simplex[0]);
+		Evals.push_back(F->eval(simplex[0]));
 
 		//step 2 - Centroid
 		vPoint Centroid(simplex[0]);
@@ -100,7 +101,7 @@ OptResult NelderMead::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Function
 	Res.OptArea = A;
 	Res.Approximations = Approx;
 	Res.Evaluations = Evals;
-	Res.Iterations = Evals.size();
+	Res.Iterations = Approx.size();
 	Res.Result = Approx.back();
 	Res.ResFuncValue = Evals.back();
 

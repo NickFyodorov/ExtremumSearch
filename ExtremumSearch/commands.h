@@ -237,7 +237,7 @@ void command_opt(std::stringstream& params, VarMap& variables) {
 	}
 	variables[optresvar] = std::static_pointer_cast<void>(optRes);
 
-	std::cout << optRes->Result;
+	std::cout << "Result: " << optRes->Result << std::endl << optRes->Iterations << " iterations";
 }
 
 /* get <vartype> <varname>*/

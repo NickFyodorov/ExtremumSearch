@@ -14,7 +14,7 @@ The Area class represents a multidimensional subset of real vector points
 
 class Area {
 protected:
-    int dim;///<the dimension of the area
+	int dim;///<the dimension of the area
 public:
 	/*!
 	constructor that sets the dimension of the area
@@ -30,7 +30,7 @@ public:
 	\param X vector point
 	\return true if the point is in the area and false otherwise
 	*/
-    virtual bool In(const vPoint& X) const = 0;
+	virtual bool In(const vPoint& X) const = 0;
 	/*!
 	abstract method that returns a uniformly distributed random point from the area
 	*/

@@ -57,6 +57,7 @@ int main() {
 	while(true) {
 		std::cout << "> ";
 		getline(std::cin, command);
+		if (command == "") continue;
 		if (command == "exit") break;
 		std::stringstream commstream(command);
 		execute(commstream, Commands, Variables);
