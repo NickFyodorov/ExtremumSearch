@@ -40,7 +40,7 @@ Examples:
 * `add area a2 2 -1 1 -2 2 -3 3` - adds a three-dimensional area (-1; 1) x (-2; 2) x (-3; 3)
 
 ### Adding new method
-Syntax: `add method <variable name> <type> <parameters>
+Syntax: `add method <variable name> <type> <parameters>`
 
 Options for method type are:
 * **_nelder_** - Nelder-Mead method.
