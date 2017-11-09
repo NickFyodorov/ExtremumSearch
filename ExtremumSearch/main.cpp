@@ -50,15 +50,19 @@
 /* used by nelder-mead */
 #include "Simplex.h"
 
-int main() {
+int main()
+{
 	Initialize();
 
 	std::string command("");
-	while(true) {
+	while (true)
+	{
 		std::cout << "> ";
 		getline(std::cin, command);
-		if (command == "") continue;
-		if (command == "exit") break;
+		if (command == "")
+			continue;
+		if (command == "exit")
+			break;
 		std::stringstream commstream(command);
 		execute(commstream, Commands, Variables);
 		std::cout << std::endl;

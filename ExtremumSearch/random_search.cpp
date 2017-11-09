@@ -4,19 +4,21 @@
 
 bool RandomSearch::SetP(double _p)
 {
-	if(_p < 0 || _p > 1) return false;
+	if (_p < 0 || _p > 1)
+		return false;
 	p = _p;
 	return true;
 }
 
 bool RandomSearch::SetGamma(double _gamma)
 {
-	if(_gamma < 0 || _gamma > 1) return false;
+	if (_gamma < 0 || _gamma > 1)
+		return false;
 	gamma = _gamma;
 	return true;
 }
 
-OptResult RandomSearch::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Function> F, std::shared_ptr<TerminalCondition> T, const vPoint & FirstPoint)
+OptResult RandomSearch::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Function> F, std::shared_ptr<TerminalCondition> T, const vPoint &FirstPoint)
 {
 	std::vector<vPoint> Approx;
 	Approx.push_back(FirstPoint);
@@ -30,11 +32,14 @@ OptResult RandomSearch::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Functi
 	double subarea_size = 1;
 	vPoint Current;
 
-	do {
-		if (ber(rng)) {
+	do
+	{
+		if (ber(rng))
+		{
 			Current = A->RandomPoint();
 		}
-		else {
+		else
+		{
 			pSubArea.reset();
 			pSubArea = A->SubArea(Approx.back(), subarea_size);
 			Current = pSubArea->RandomPoint();
@@ -59,5 +64,7 @@ OptResult RandomSearch::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Functi
 
 void RandomSearch::Info() const
 {
-	std::cout << "Random Search(" << "P = " << GetP() << "," << "Gamma = " << GetGamma() << ")";
+	std::cout << "Random Search("
+			  << "P = " << GetP() << ","
+			  << "Gamma = " << GetGamma() << ")";
 }
