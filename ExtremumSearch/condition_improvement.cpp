@@ -1,7 +1,10 @@
 #include "condition_improvement.h"
 #include "count_condition.h"
 
-bool ConditionImprovement::Stop(std::shared_ptr<Function> F, const std::vector<vPoint> &Approx, const std::vector<double> &Evals) const
+bool ConditionImprovement::Stop(
+	std::shared_ptr<Function> F,
+	const std::vector<vPoint> &Approx,
+	const std::vector<double> &Evals) const
 {
 	if (Evals.size() > GetCritIter())
 		return true;

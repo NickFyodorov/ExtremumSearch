@@ -30,7 +30,13 @@ class TerminalCondition
 	\param Evals std::vector of function evaluations in approximation points
 	\return true if the condition requirements for termination are met and false otherwise
 	*/
-	virtual bool Stop(std::shared_ptr<Function> F, const std::vector<vPoint> &Approx, const std::vector<double> &Evals) const { return Evals.size() > GetCritIter(); };
+	virtual bool Stop(
+		std::shared_ptr<Function> F,
+		const std::vector<vPoint> &Approx,
+		const std::vector<double> &Evals) const
+	{
+		return Evals.size() > GetCritIter();
+	};
 	/*!
 	writes the information about the terminal condition to std::cout
 	*/

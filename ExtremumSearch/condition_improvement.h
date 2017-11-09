@@ -17,6 +17,9 @@ class ConditionImprovement : public CountCondition
 	Overrides TerminalCondtion::Stop
 	\return FALSE if in the last CountCondition::max_count of iterations the approximation was not improved and TRUE otherwise
 	*/
-	virtual bool Stop(std::shared_ptr<Function> F, const std::vector<vPoint> &Approx, const std::vector<double> &Evals) const override;
+	virtual bool Stop(
+		std::shared_ptr<Function> F,
+		const std::vector<vPoint> &Approx,
+		const std::vector<double> &Evals) const override;
 	virtual void Info() const; ///< writes the name of the condition and the current value of
 };

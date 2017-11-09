@@ -18,6 +18,9 @@ class ConditionIter : public CountCondition
 	Overrides TerminalCondition::Stop
 	\return TRUE if the number of iteration exceeds the maximum count and FALSE otherwise
 	*/
-	virtual bool Stop(std::shared_ptr<Function> F, const std::vector<vPoint> &Approx, const std::vector<double> &Evals) const override;
+	virtual bool Stop(
+		std::shared_ptr<Function> F,
+		const std::vector<vPoint> &Approx,
+		const std::vector<double> &Evals) const override;
 	virtual void Info() const; ///< writes the name of the method and the current value of maximum count of iterations
 };

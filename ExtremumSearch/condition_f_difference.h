@@ -16,6 +16,9 @@ class ConditionFDiff : public EpsCondition
 	Overrides TerminalCondition::Stop
 	\return TRUE if the absolute value of the difference of the function evaluations of the two last approximations is less than epsilon and FALSE otherwise
 	*/
-	virtual bool Stop(std::shared_ptr<Function> F, const std::vector<vPoint> &Approx, const std::vector<double> &Evals) const override;
+	virtual bool Stop(
+		std::shared_ptr<Function> F,
+		const std::vector<vPoint> &Approx,
+		const std::vector<double> &Evals) const override;
 	virtual void Info() const; ///< writes the name of the condition and the current value of epsilon
 };

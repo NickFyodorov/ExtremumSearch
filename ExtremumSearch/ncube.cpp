@@ -11,10 +11,15 @@ NCube::NCube(int _dim) : Area(_dim)
 	}
 }
 
-NCube::NCube(std::vector<double> &minimums, std::vector<double> &maximums) : Area(minimums.size())
+NCube::NCube(
+	std::vector<double> &minimums,
+	std::vector<double> &maximums) : Area(minimums.size())
 {
 	if (minimums.size() != maximums.size())
-		throw std::invalid_argument("Numbers of minimums and maximums must be equal.");
+	{
+		throw std::invalid_argument("Numbers of minimums and
+		maximums must be equal.");
+	}
 	int n = minimums.size();
 
 	for (int i = 0; i < n; ++i)

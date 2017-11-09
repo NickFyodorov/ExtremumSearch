@@ -43,13 +43,19 @@ class OptimizationMethod
 	\param FirstPoint vector point from which the optimization process begins
 	\return OptResult structure with the result of the optimization
 	*/
-	virtual OptResult Optimize(std::shared_ptr<Area> A, std::shared_ptr<Function> F, std::shared_ptr<TerminalCondition> T, const vPoint &FirstPoint) = 0;
+	virtual OptResult Optimize(
+		std::shared_ptr<Area> A,
+		std::shared_ptr<Function> F,
+		std::shared_ptr<TerminalCondition> T,
+		const vPoint &FirstPoint) = 0;
 	virtual char *Name() const = 0; ///< abstract method that returns the name of the method
 	virtual void Info() const = 0;  ///< abstract method that writes the information about the method to std::cout
 	/*!
 	overloaded output operator for std::cout
 	*/
-	friend std::ostream &operator<<(std::ostream &out, std::shared_ptr<OptimizationMethod> optMethod)
+	friend std::ostream &operator<<(
+		std::ostream &out,
+		std::shared_ptr<OptimizationMethod> optMethod)
 	{
 		optMethod->Info();
 		return out;

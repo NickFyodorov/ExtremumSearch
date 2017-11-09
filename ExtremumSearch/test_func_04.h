@@ -10,7 +10,7 @@ TestFunc04 is derived from Function and represents the fourth test function from
 */
 class TestFunc04 : public Function
 {
-  public:
+public:
 	TestFunc04(std::shared_ptr<Area> _domain) : Function(_domain) {}
 	virtual ~TestFunc04() { domain = 0; }
 	virtual double eval(const vPoint &X) const;

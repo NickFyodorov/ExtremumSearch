@@ -73,5 +73,7 @@ void Simplex::Squeeze(std::shared_ptr<Area> A)
 
 void Simplex::Sort(std::shared_ptr<Function> F)
 {
-	std::sort(vertices.begin(), vertices.end(), [&](const vPoint &X1, const vPoint &X2) { return F->eval(X1) < F->eval(X2); });
+	std::sort(vertices.begin(), vertices.end(), 
+	[&](const vPoint &X1, const vPoint &X2) 
+	{ return F->eval(X1) < F->eval(X2); });
 }

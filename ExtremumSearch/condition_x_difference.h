@@ -10,16 +10,19 @@ ConditionXDiff class is derived from EpsCondition and represents a terminal cond
 
 class ConditionXDiff : public EpsCondition
 {
-  private:
+private:
 	double epsilon;
 
-  public:
+public:
 	ConditionXDiff(double _eps) : EpsCondition(_eps) {} ///< constructor
-	virtual ~ConditionXDiff() {}						///< destructor
+	virtual ~ConditionXDiff() {}												///< destructor
 	/*!
 	Overrides TerminalCondition::Stop.
 	\return TRUE if the norm of the difference betweeen the two last approximations is less than epsilon and FALSE otherwise.
 	*/
-	virtual bool Stop(std::shared_ptr<Function> F, const std::vector<vPoint> &Approx, const std::vector<double> &Evals) const override;
+	virtual bool Stop(
+			std::shared_ptr<Function> F,
+			const std::vector<vPoint> &Approx,
+			const std::vector<double> &Evals) const override;
 	virtual void Info() const; ///< writes the name of the condition and the current value of epsilon
 };

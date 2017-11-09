@@ -10,7 +10,7 @@ TestFunc03 is derived from Function and represents the third test function from 
 */
 class TestFunc03 : public Function
 {
-  public:
+public:
 	TestFunc03(std::shared_ptr<Area> _domain) : Function(_domain) {}
 	virtual ~TestFunc03() { domain = 0; }
 	virtual double eval(const vPoint &X) const;

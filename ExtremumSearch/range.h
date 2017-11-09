@@ -29,7 +29,10 @@ class Range : public Area
 	\param X vector point
 	\return true if X is onedimensional and its coordinate is in the range and false otherwise
 	*/
-	virtual bool In(const vPoint &X) const { return X.GetDim() == RANGE_DIM && In(X[0]); }
+	virtual bool In(const vPoint &X) const
+	{
+		return X.GetDim() == RANGE_DIM && In(X[0]);
+	}
 	/*!
 	inhereted from Area
 	\param X vector point

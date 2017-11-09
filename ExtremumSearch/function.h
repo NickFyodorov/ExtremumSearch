@@ -68,5 +68,8 @@ class Function
 	calculates gradient of the function F using formula: 1 / (2*dX) * (F(X + dX) - F(X - dX))
 	\return double precision number which represents the result of the gradient calculation
 	*/
-	friend double CalcGrad(std::shared_ptr<Function> F, const vPoint &X, double delta);
+	friend double CalcGrad(
+		std::shared_ptr<Function> F,
+		const vPoint &X,
+		double delta);
 };

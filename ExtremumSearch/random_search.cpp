@@ -18,7 +18,11 @@ bool RandomSearch::SetGamma(double _gamma)
 	return true;
 }
 
-OptResult RandomSearch::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Function> F, std::shared_ptr<TerminalCondition> T, const vPoint &FirstPoint)
+OptResult RandomSearch::Optimize(
+	std::shared_ptr<Area> A,
+	std::shared_ptr<Function> F,
+	std::shared_ptr<TerminalCondition> T,
+	const vPoint &FirstPoint)
 {
 	std::vector<vPoint> Approx;
 	Approx.push_back(FirstPoint);
