@@ -5,7 +5,12 @@
 
 #include "nelder_mead.h"
 
-NelderMead::NelderMead(double _reflection, double _expansion, double _contraction, double _shrink) : OptimizationMethod()
+NelderMead::NelderMead(
+	double _reflection,
+	double _expansion,
+	double _contraction,
+	double _shrink
+) : OptimizationMethod()
 {
 	if (!SetReflection(_reflection)) {
 		throw std::invalid_argument("Reflection parameter must be a positive number.");
@@ -24,9 +29,16 @@ NelderMead::NelderMead(double _reflection, double _expansion, double _contractio
 	}
 }
 
-OptResult NelderMead::Optimize(std::shared_ptr<Area> A, std::shared_ptr<Function> F, std::shared_ptr<TerminalCondition> T, const vPoint & FirstPoint)
+OptResult NelderMead::Optimize(
+	std::shared_ptr<Area> A,
+	std::shared_ptr<Function> F,
+	std::shared_ptr<TerminalCondition> T,
+	const vPoint & FirstPoint
+)
 {
-	if (A->GetDim() != F->GetDim())  throw std::invalid_argument("Function dimension and area dimension must be equal.");
+	if (A->GetDim() != F->GetDim()) { 
+		throw std::invalid_argument("Function dimension and area dimension must be equal.");
+	}
 	if (!A->In(FirstPoint)) throw std::invalid_argument("First point must be in area.");
 
 	Simplex simplex(A->GetDim());
@@ -147,5 +159,9 @@ bool NelderMead::SetShrink(double _shrink)
 void NelderMead::Info() const
 {
 	std::cout << "Nelder-Mead(";
-	std::cout << "R = " << GetReflection() << ", " << "C = " << GetContraction() << ", " << "E = " << GetExpansion() << ", " << "S = " << GetShrink() << ")";
+	std::cout
+		<< "R = " << GetReflection() << ", "
+		<< "C = " << GetContraction() << ", "
+		<< "E = " << GetExpansion() << ", "
+		<< "S = " << GetShrink() << ")";
 }

@@ -11,5 +11,5 @@ bool ConditionGrad::Stop(std::shared_ptr<Function> F, const std::vector<vPoint>&
 
 void ConditionGrad::Info() const
 {
-	std::cout << "Condition Grad(" << "Eps = " << GetEps() << ")";
+	std::cout << "Condition Grad(Eps = " << GetEps() << ")";
 }
