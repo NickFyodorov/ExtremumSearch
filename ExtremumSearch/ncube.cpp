@@ -17,8 +17,8 @@ NCube::NCube(
 {
 	if (minimums.size() != maximums.size())
 	{
-		throw std::invalid_argument("Numbers of minimums and
-		maximums must be equal.");
+		throw std::invalid_argument("Numbers of minimums and"
+		"maximums must be equal.");
 	}
 	int n = minimums.size();
 
@@ -60,7 +60,8 @@ std::shared_ptr<Area> NCube::SubArea(const vPoint &X, double epsilon) const
 	for (int i = 0; i < GetDim(); ++i)
 	{
 		T[0] = X[i];
-		ranges.push_back(std::static_pointer_cast<Range>(this->at(i).SubArea(T, epsilon)));
+		ranges.push_back(
+			std::static_pointer_cast<Range>(this->at(i).SubArea(T, epsilon)));
 	}
 	std::shared_ptr<Area> pCube = std::make_shared<NCube>(ranges);
 	return pCube;

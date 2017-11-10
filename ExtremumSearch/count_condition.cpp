@@ -4,7 +4,8 @@ CountCondition::CountCondition(int _mcount)
 {
 	if (!SetMaxCount(_mcount))
 	{
-		throw std::invalid_argument("Maximum count must be a positive integer");
+		throw std::invalid_argument("Maximum count must be"
+			" a positive integer");
 	}
 }
 

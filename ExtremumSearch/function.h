@@ -59,7 +59,9 @@ class Function
 	\param out output stream
 	\param F shared pointer to the function, which formula is to be printed
 	*/
-	friend std::ostream &operator<<(std::ostream &out, std::shared_ptr<Function> F)
+	friend std::ostream &operator<<(
+		std::ostream &out, 
+		std::shared_ptr<Function> F)
 	{
 		F->Info();
 		return out;

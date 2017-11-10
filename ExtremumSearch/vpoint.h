@@ -77,5 +77,5 @@ class vPoint
 	friend vPoint &operator/(const vPoint &point, double scalar);
 	vPoint &operator/=(double scalar);										 ///< divides each coordinate of the point by the scalar value
 	friend std::ostream &operator<<(std::ostream &out, const vPoint &Point); ///< writes the information about the vector point to an std::ostream object
-	friend double norm(const vPoint &Point);								 //<calculates the standard norm of the point
+	friend double norm(const vPoint &Point);								 ///<calculates the standard norm of the point
 };

@@ -19,7 +19,10 @@ public:
 	/*!
 	constructor that sets the parameters of the method to the given values or to default values if no value is provided
 	*/
-	RandomSearch(double _p = 0.5, double _gamma = 0.5) : p(_p), gamma(_gamma), OptimizationMethod() {}
+	RandomSearch(
+		double _p = 0.5, 
+		double _gamma = 0.5) : 
+		p(_p), gamma(_gamma), OptimizationMethod() {}
 	double GetP() const { return p; }					/// returns the bernoulli distribution parameter of the method
 	double GetGamma() const { return gamma; } ///< returns the shrinking parameter of the method
 	bool SetP(double _p);											///< sets the bernoulli distribution parameter of the method with argument validation

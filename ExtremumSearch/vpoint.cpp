@@ -10,8 +10,8 @@ vPoint::vPoint(int _dim)
 {
 	if (_dim <= 0)
 	{
-		throw std::invalid_argument("Point dimension 
-		must be a positive integer");
+		throw std::invalid_argument("Point dimension" 
+		"must be a positive integer");
 	}
 
 	dim = _dim;
@@ -19,7 +19,8 @@ vPoint::vPoint(int _dim)
 		coordinates.push_back(0);
 }
 
-vPoint::vPoint(const vPoint &other) : dim(other.GetDim()), coordinates(other.coordinates)
+vPoint::vPoint(const vPoint &other) : 
+	dim(other.GetDim()), coordinates(other.coordinates)
 {
 }
 
@@ -47,8 +48,8 @@ vPoint &vPoint::operator+=(const vPoint &other)
 {
 	if (GetDim() != other.GetDim())
 	{
-		throw std::invalid_argument("Point dimensions 
-		must be equal for the addition procedure");
+		throw std::invalid_argument("Point dimensions" 
+		"must be equal for the addition procedure");
 	}
 
 	for (int i = 0; i < GetDim(); ++i)
@@ -62,8 +63,8 @@ vPoint &vPoint::operator-=(const vPoint &other)
 {
 	if (GetDim() != other.GetDim())
 	{
-		throw std::invalid_argument("Point dimensions 
-		must be equal for the subtraction procedure");
+		throw std::invalid_argument("Point dimensions "
+		"must be equal for the subtraction procedure");
 	}
 
 	for (int i = 0; i < GetDim(); ++i)

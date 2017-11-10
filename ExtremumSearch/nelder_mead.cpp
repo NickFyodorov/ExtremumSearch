@@ -13,26 +13,26 @@ NelderMead::NelderMead(
 {
 	if (!SetReflection(_reflection))
 	{
-		throw std::invalid_argument("Reflection parameter
-		must be a positive number.");
+		throw std::invalid_argument("Reflection parameter"
+		"must be a positive number.");
 	}
 
 	if (!SetContraction(_contraction))
 	{
-		throw std::invalid_argument("Contraction parameter
-		must be a number between 0 and 0.5.");
+		throw std::invalid_argument("Contraction parameter"
+		"must be a number between 0 and 0.5.");
 	}
 
 	if (!SetExpansion(_expansion))
 	{
-		throw std::invalid_argument("Expansion parameter
-		must be a number exceeding 1.");
+		throw std::invalid_argument("Expansion parameter"
+		"must be a number exceeding 1.");
 	}
 
 	if (!SetShrink(_shrink))
 	{
-		throw std::invalid_argument("Shrink parameter
-		must be a number between 0 and 1.");
+		throw std::invalid_argument("Shrink parameter"
+		"must be a number between 0 and 1.");
 	}
 }
 
@@ -44,8 +44,8 @@ OptResult NelderMead::Optimize(
 {
 	if (A->GetDim() != F->GetDim())
 	{
-		throw std::invalid_argument("Function dimension and area dimension
-		must be equal.");
+		throw std::invalid_argument("Function dimension and area dimension"
+		"must be equal.");
 	}
 	if (!A->In(FirstPoint))
 		throw std::invalid_argument("First point must be in area.");
@@ -97,7 +97,8 @@ OptResult NelderMead::Optimize(
 			Expanded -= Centroid;
 			Expanded *= expansion;
 			Expanded += Centroid;
-			simplex[n] = (F->eval(Expanded) < F->eval(Reflected)) ? Expanded : Reflected;
+			simplex[n] = (F->eval(Expanded) < F->eval(Reflected)) ? 
+				Expanded : Reflected;
 			continue;
 		}
 

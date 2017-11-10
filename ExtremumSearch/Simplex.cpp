@@ -12,19 +12,22 @@ Simplex::Simplex(int _dim) : dim(_dim)
 	}
 }
 
-Simplex::Simplex(const std::vector<vPoint> &_vertices) : dim(_vertices[0].GetDim())
+Simplex::Simplex(const std::vector<vPoint> &_vertices) : 
+	dim(_vertices[0].GetDim())
 {
 
 	if (vertices.size() != (dim + 1))
 	{
-		throw std::invalid_argument("Simplex dimension must be equal to its veritices dimension plus one");
+		throw std::invalid_argument("Simplex dimension must be"
+			" equal to its veritices dimension plus one");
 	}
 
 	for (int i = 0; i < _vertices.size(); ++i)
 	{
 		if (_vertices[i].GetDim() != dim)
 		{
-			throw std::invalid_argument("Simplex vertices dimensions must be equal");
+			throw std::invalid_argument("Simplex vertices dimensions"
+				" must be equal");
 		}
 	}
 

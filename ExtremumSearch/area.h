@@ -41,7 +41,9 @@ public:
 	\param epsilon positive real number that indicates the size of the neighbourhood
 	\return shared pointer to the neighbourhood of the point
 	*/
-	virtual std::shared_ptr<Area> SubArea(const vPoint& X, double epsilon) const = 0;
+	virtual std::shared_ptr<Area> SubArea(
+		const vPoint& X,
+		double epsilon) const = 0;
 	/*!
 	returns the area dimension
 	\return the dimension of the area
@@ -54,7 +56,9 @@ public:
 	/*!
 	overloaded output to std::cout
 	*/
-	friend std::ostream& operator<<(std::ostream& out, std::shared_ptr<Area> A) {
+	friend std::ostream& operator<<(
+		std::ostream& out, 
+		std::shared_ptr<Area> A) {
 		A->Info();
 		return out;
 	}

@@ -20,7 +20,8 @@ std::shared_ptr<Area> Range::SubArea(const vPoint &X, double epsilon) const
 
 	double left = X[0] - epsilon > GetMin() ? X[0] - epsilon : GetMin();
 	double right = X[0] + epsilon < GetMax() ? X[0] + epsilon : GetMax();
-	return std::static_pointer_cast<Area>(std::make_shared<Range>(left, right));
+	return std::static_pointer_cast<Area>(
+		std::make_shared<Range>(left, right));
 }
 
 void Range::Info() const

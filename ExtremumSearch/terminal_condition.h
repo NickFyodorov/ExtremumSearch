@@ -44,7 +44,9 @@ class TerminalCondition
 	/*!
 	overloaded output operator for std::cout
 	*/
-	friend std::ostream &operator<<(std::ostream &out, std::shared_ptr<TerminalCondition> T)
+	friend std::ostream &operator<<(
+		std::ostream &out, 
+		std::shared_ptr<TerminalCondition> T)
 	{
 		T->Info();
 		return out;

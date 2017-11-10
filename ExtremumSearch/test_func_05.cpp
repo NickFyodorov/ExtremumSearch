@@ -10,7 +10,7 @@ double TestFunc05::eval(const vPoint &X) const
 
 void TestFunc05::Info() const
 {
-	std::cout << "F(X1, X2) = 1.5 - X1 * (1 - X2) +
-	 (2.25 - X1 * (1 - X2)^2)^2 + 
-	 (2.625 - X1 * (1 - X2^3))^2";
+	std::cout << "F(X1, X2) = 1.5 - X1 * (1 - X2) +"
+	 "(2.25 - X1 * (1 - X2)^2)^2 + "
+	 "(2.625 - X1 * (1 - X2^3))^2";
 }

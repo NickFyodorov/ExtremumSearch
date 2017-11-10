@@ -22,7 +22,8 @@ class Range : public Area
 	/*!
 	constructor that sets the bounds of the range
 	*/
-	Range(double _min = -1.0, double _max = 1.0) : Area(RANGE_DIM), min(_min), max(_max) {}
+	Range(double _min = -1.0, double _max = 1.0) : 
+		Area(RANGE_DIM), min(_min), max(_max) {}
 	virtual ~Range() {} ///< destructor
 	/*!
 	inhereted from Area
@@ -48,7 +49,9 @@ class Range : public Area
 	inhereted from Area
 	\return the intersection between the epsilon range of vector point X and the range
 	*/
-	virtual std::shared_ptr<Area> SubArea(const vPoint &X, double epsilon) const;
+	virtual std::shared_ptr<Area> SubArea(
+		const vPoint &X, 
+		double epsilon) const;
 	double GetMax() const { return max; } ///< return the right bound of the range
 	double GetMin() const { return min; } ///< return the left bound of the range
 	/*!
@@ -59,7 +62,9 @@ class Range : public Area
 	/*!
 	prints the range bounds to std::cout
 	*/
-	friend std::ostream &operator<<(std::ostream &out, std::shared_ptr<Range> R)
+	friend std::ostream &operator<<(
+		std::ostream &out, 
+		std::shared_ptr<Range> R)
 	{
 		R->Info();
 		return out;

@@ -19,13 +19,21 @@ class NelderMead : public OptimizationMethod
 	/*!
 	constructor that sets the parameters of the method to the given values or to default values if no value is provided
 	*/
-	NelderMead(double _reflection = 1.0, double _expansion = 2.0, double _contraction = 0.5, double _shrink = 0.5);
+	NelderMead(
+		double _reflection = 1.0, 
+		double _expansion = 2.0, 
+		double _contraction = 0.5, 
+		double _shrink = 0.5);
 	virtual ~NelderMead() {} ///< destructor
 	/*!
 	inherited from OptimizationMethod
 	optimizes the function in given area using the Nelder-Mead algorithm
 	*/
-	virtual OptResult Optimize(std::shared_ptr<Area> A, std::shared_ptr<Function> F, std::shared_ptr<TerminalCondition> T, const vPoint &FirstPoint);
+	virtual OptResult Optimize(
+		std::shared_ptr<Area> A, 
+		std::shared_ptr<Function> F, 
+		std::shared_ptr<TerminalCondition> T, 
+		const vPoint &FirstPoint);
 	virtual char *Name() const { return "Nelder-Mead"; }  ///< returns the name of the method
 	bool SetReflection(double _reflection);				  ///< sets the reflection parameter of the method with argument validation
 	bool SetExpansion(double _expansion);				  ///< sets the expansion parameter of the method with argument validation

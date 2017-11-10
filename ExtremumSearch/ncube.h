@@ -47,7 +47,9 @@ class NCube : public Area
 	inherited from Area
 	\return intersection of epsilon cube around vector point X and this cube
 	*/
-	virtual std::shared_ptr<Area> SubArea(const vPoint &X, double epsilon) const;
+	virtual std::shared_ptr<Area> SubArea(
+		const vPoint &X, 
+		double epsilon) const;
 	const Range &operator[](int index) const { return *(ranges[index]); } ///< returns the range of the cube at given index
 	Range &operator[](int index) { return *(ranges[index]); }			  ///< returns the range of the cube at given index
 	const Range &at(int index) const
